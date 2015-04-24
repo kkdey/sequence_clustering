@@ -6,8 +6,12 @@ normalize=function(x){
   #}
 }
 
+smooth.lambda = function(lambda){
+  return(t(apply(lambda,1,ashsmooth.pois,cxx = FALSE)))
+}
+
 ###mixed membership
-EMupd.mix=function(y,pi,phi,n,K,B){
+EMupd.mix=function(y,smooth,pi,phi,n,K,B){
   #gamma is nB*K, pi is n*K, phi is K*B, y is n*B
   gamma=pi[rep(1:n,each=B),]*t(phi)[rep(1:B,n),]
   gamma=t(apply(gamma,1,normalize))
@@ -23,7 +27,12 @@ EMupd.mix=function(y,pi,phi,n,K,B){
   #ykb=ybt/ybw
   #ykb[is.na(ykb)]=0
   #ykt=colSums(ykb)
-  lambda=phi*((colSums(ybt)/colSums(pi))%o%rep(1,B))
+  lscale=((colSums(ybt)/colSums(pi))%o%rep(1,B))
+  lambda=phi*lscale
+  if(smooth==TRUE){
+    lambda=smooth.lambda(lambda)
+    phi=lambda/lscale
+  }
   return(list(pi=pi,phi=phi,lambda=lambda,gamma=gamma))
 }
 
@@ -38,13 +47,13 @@ negloglik.mix=function(y,pi,phi,n,K,B){
 
 
 
-EMproc.mix=function(y,pi,phi,n,K,B,tol,maxit){
+EMproc.mix=function(y,smooth,pi,phi,n,K,B,tol,maxit){
   loglik.old=Inf
   loglik=negloglik.mix(y,pi,phi,n,K,B)
   cyc=0
   while(abs(loglik-loglik.old)>tol&cyc<maxit){
     loglik.old=loglik
-    res=EMupd.mix(y,pi,phi,n,K,B)
+    res=EMupd.mix(y,smooth,pi,phi,n,K,B)
     pi=res$pi
     phi=res$phi
     gamma=res$gamma
@@ -58,7 +67,7 @@ print(loglik)
   return(list(pi=pi,phi=phi,lambda=lambda,gamma=gamma,loglik=loglik))
 }
 
-cluster.mix=function(y,pi0=NULL,phi0=NULL,K,tol,maxit){
+cluster.mix=function(y,smooth=TRUE,pi0=NULL,phi0=NULL,K,tol,maxit){
   n=dim(y)[1]
   B=dim(y)[2]
   #if(is.null(pseudocounts)) pseudocounts=10^(round(log10(1/B/100000)))
@@ -76,6 +85,6 @@ cluster.mix=function(y,pi0=NULL,phi0=NULL,K,tol,maxit){
     row.names(phi0)=NULL
   }
 
-  out=EMproc.mix(y,pi0,phi0,n,K,B,tol,maxit)
+  out=EMproc.mix(y,smooth,pi0,phi0,n,K,B,tol,maxit)
   return(list(pi=out$pi,phi=out$phi,lambda=out$lambda,lambda=out$lambda,gamma=out$gamma,loglik=out$loglik))
 }

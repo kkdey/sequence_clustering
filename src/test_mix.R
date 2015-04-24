@@ -47,16 +47,26 @@ for(i in 1:n){
   }
 }
 
-res=cluster.mix(y,K=4,tol=1e-4,maxit=4000)
+res=cluster.mix(y,smooth=FALSE,K=4,tol=1e-4,maxit=4000)
+res.smooth=cluster.mix(y,K=4,tol=1e-4,maxit=4000)
 res.tpx=topics(y,4)
 apply(res.tpx$omega,1,get.max)
 apply(res$pi,1,get.max)
 
 plot(res$phi[1,],type='l')
-lines(res.tpx$theta[,4],col=2)
+lines(res.tpx$theta[,2],col=2)
+lines(res.smooth$phi[1,],col=4)
 
 plot(res.tpx$theta[,4],type='l')
 
 plot(res$lambda[1,],type='l')
 lambda.smooth=t(apply(res$lambda,1,ashsmooth.pois,cxx=FALSE))
-plot(lambda.smooth[4,],type='l')
+par(mfrow=c(4,1))
+plot(lambda.smooth[1,],ylim=c(0,8),type='l')
+lines(res.smooth$lambda[1,],col=2)
+plot(lambda.smooth[2,],ylim=c(0,5),type='l')
+lines(res.smooth$lambda[2,],col=2)
+plot(lambda.smooth[3,],ylim=c(0,4),type='l')
+lines(res.smooth$lambda[4,],col=2)
+plot(lambda.smooth[4,],ylim=c(0,2),type='l')
+lines(res.smooth$lambda[3,],col=2)
