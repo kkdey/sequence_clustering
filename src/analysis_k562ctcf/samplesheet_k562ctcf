@@ -1,0 +1,3 @@
+SampleID Type bedPath ReadDepth bamPath
+1 Control - ~/projects/sequence_clustering/data/k562ctcf/wgEncodeBroadHistoneK562CtcfStdAlnRep0.bed ~/projects/sequence_clustering/data/k562ctcf/wgEncodeBroadHistoneK562CtcfStdAlnRep1.bam
+2 Control - ~/projects/sequence_clustering/data/k562ctcf/wgEncodeBroadHistoneK562CtcfStdAlnRep0.bed ~/projects/sequence_clustering/data/k562ctcf/wgEncodeBroadHistoneK562CtcfStdAlnRep2.bam
