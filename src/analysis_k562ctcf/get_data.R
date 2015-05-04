@@ -1,6 +1,6 @@
+dir.name = "~/projects/sequence_clustering"
 library(multiseq)
 lreg = 2^10
-dir.name = "~/projects/sequence_clustering"
 peaks = read.table(file.path(dir.name, "data", "k562ctcf", "wgEncodeBroadHistoneK562CtcfStdAlnRep0.bed"))
 samplesheet = file.path(dir.name, "src/analysis_k562ctcf", "samplesheet_k562ctcf")
 peak.chr = peaks[, 1]
