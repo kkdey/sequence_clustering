@@ -53,13 +53,24 @@ res.tpx=topics(y,4)
 apply(res.tpx$omega,1,get.max)
 apply(res$pi,1,get.max)
 
+par(mfrow=c(4,1))
 plot(res$phi[1,],type='l')
 lines(res.tpx$theta[,2],col=2)
 lines(res.smooth$phi[1,],col=4)
+plot(res$phi[2,],type='l')
+lines(res.tpx$theta[,1],col=2)
+lines(res.smooth$phi[2,],col=4)
+plot(res$phi[3,],type='l')
+lines(res.tpx$theta[,3],col=2)
+lines(res.smooth$phi[3,],col=4)
+plot(res$phi[4,],type='l')
+lines(res.tpx$theta[,4],col=2)
+lines(res.smooth$phi[4,],col=4)
 
-plot(res.tpx$theta[,4],type='l')
 
-plot(res$lambda[1,],type='l')
+
+
+
 lambda.smooth=t(apply(res$lambda,1,ashsmooth.pois,cxx=FALSE))
 par(mfrow=c(4,1))
 plot(lambda.smooth[1,],ylim=c(0,10),type='l',col=4)
