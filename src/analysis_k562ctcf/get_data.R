@@ -12,7 +12,8 @@ nreg = length(peak.chr)
 data.sig = matrix(0, nreg, lreg)
 for(i in 1:nreg){
 	region = paste0(peak.chr[i], ":", peak.start[i], "-", peak.end[i])
-	data.sig[i, ] = get.counts(samplesheet, region)[1,]
+        temp.data = get.counts(samplesheet, region)
+	data.sig[i, ] = colSums(temp.data)
 	print(i)
 }
 save(data.sig, peak.chr, peak.center, peak.start, peak.start, file = file.path(dir.name, "data", "k562ctcf", "data.sig.Robj"))
