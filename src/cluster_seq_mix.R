@@ -29,7 +29,7 @@ EMupd.mix=function(y,smooth,pi,phi,n,K,B){
   #ykt=colSums(ykb)
   lscale=((colSums(ybt)/colSums(pi))%o%rep(1,B))
   lambda=phi*lscale
-  save(lambda,file="D:/Grad School/projects/sequence_clustering/results/analysis_k562ctcf/debug_lambda.Robj")
+  #save(lambda,file="D:/Grad School/projects/sequence_clustering/results/analysis_k562ctcf/debug_lambda.Robj")
   if(smooth==TRUE){
     lambda=smooth.lambda(lambda)
     phi=lambda/lscale
