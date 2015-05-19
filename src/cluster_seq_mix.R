@@ -30,12 +30,14 @@ EMupd.mix=function(y,smooth,pi,phi,n,K,B){
   lscale=((colSums(ybt)/colSums(pi))%o%rep(1,B))
   lambda=phi*lscale
   #save(lambda,file="D:/Grad School/projects/sequence_clustering/results/analysis_k562ctcf/debug_lambda.Robj")
+  phi.unsmoothed=NULL
   if(smooth==TRUE){
+    phi.unsmoothed=phi
     lambda=smooth.lambda(lambda)
     phi=lambda/lscale
   }
 
-  return(list(pi=pi,phi=phi,lambda=lambda,gamma=gamma))
+  return(list(pi=pi,phi=phi,phi.unsmoothed=phi.unsmoothed,lambda=lambda,gamma=gamma))
 }
 
 
@@ -58,15 +60,20 @@ EMproc.mix=function(y,smooth,pi,phi,n,K,B,tol,maxit){
     res=EMupd.mix(y,smooth,pi,phi,n,K,B)
     pi=res$pi
     phi=res$phi
+    phi.unsmoothed=res$phi.unsmoothed
     gamma=res$gamma
     lambda=res$lambda
-    loglik=negloglik.mix(y,pi,phi,n,K,B)
+    if(smooth==TRUE){
+      loglik=negloglik.mix(y,pi,phi.unsmoothed,n,K,B)
+    }else{
+      loglik=negloglik.mix(y,pi,phi,n,K,B)    
+    }
     cyc=cyc+1
 #print(cyc)
 #print(pi)
 print(loglik)
   }
-  return(list(pi=pi,phi=phi,lambda=lambda,gamma=gamma,loglik=loglik))
+  return(list(pi=pi,phi=phi,phi.unsmoothed,lambda=lambda,gamma=gamma,loglik=loglik))
 }
 
 cluster.mix=function(y,smooth=TRUE,pi0=NULL,phi0=NULL,K,tol,maxit){
