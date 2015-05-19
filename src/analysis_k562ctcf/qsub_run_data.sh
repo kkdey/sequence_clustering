@@ -1,6 +1,6 @@
 MEM=20g
 
-LOG_DIR="$HOME/projects/sequence_analysis/results/analysis_k562ctcf/logs/"
+LOG_DIR="$HOME/projects/sequence_clustering/results/analysis_k562ctcf/logs/"
 if [ ! -d "${LOG_DIR}" ]; then
 	    mkdir ${LOG_DIR}
 fi

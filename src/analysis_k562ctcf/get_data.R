@@ -16,4 +16,4 @@ for(i in 1:nreg){
 	data.sig[i, ] = colSums(temp.data)
 	print(i)
 }
-save(data.sig, peak.chr, peak.center, peak.start, peak.start, file = file.path(dir.name, "data", "k562ctcf", "data.sig.Robj"))
+save(data.sig, peak.chr, peak.center, peak.start, peak.start, file = file.path(dir.name, "results", "analysis_k562ctcf", "data.sig.Robj"))
