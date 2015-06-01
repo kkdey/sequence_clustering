@@ -1,0 +1,3 @@
+work on updates for ash+multiscale version
+get actual k562 data(?)
+try different convergence criteria
