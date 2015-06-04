@@ -1,3 +1,5 @@
+source("src/cluster_seq_mix.R")
+
 library(maptpx)
 library(smash)
 get.max=function(x) which(x==max(x))
@@ -39,13 +41,13 @@ for(i in 1:n){
 }
 
 
-y=matrix(0,nrow=n,ncol=B)
-for(i in 1:n){
-  for(b in 1:B){
-    lambda=sum(pi.true[i,]*lambda.true[,b])
-    y[i,b]=rpois(1,lambda)
-  }
-}
+# y=matrix(0,nrow=n,ncol=B)
+# for(i in 1:n){
+#   for(b in 1:B){
+#     lambda=sum(pi.true[i,]*lambda.true[,b])
+#     y[i,b]=rpois(1,lambda)
+#   }
+# }
 
 res=cluster.mix(y,smooth=FALSE,K=4,tol=1e-4,maxit=4000)
 res.smooth=cluster.mix(y,K=4,tol=1e-4,maxit=4000)

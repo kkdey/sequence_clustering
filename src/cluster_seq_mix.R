@@ -36,6 +36,11 @@ EMupd.mix=function(y,smooth,pi,phi,n,K,B){
     lambda=smooth.lambda(lambda)
     phi=lambda/lscale
   }
+plot(NA,xlim=c(0,1024),ylim=c(0,0.01))
+lines(phi[1,])
+lines(phi[2,])
+lines(phi[3,])
+lines(phi[4,])
 
   return(list(pi=pi,phi=phi,phi.unsmoothed=phi.unsmoothed,lambda=lambda,gamma=gamma))
 }
@@ -51,12 +56,45 @@ negloglik.mix=function(y,pi,phi,n,K,B){
 
 
 
+# EMproc.mix=function(y,smooth,pi,phi,n,K,B,tol,maxit){
+#   loglik.old=Inf
+#   loglik=negloglik.mix(y,pi,phi,n,K,B)
+#   cyc=0
+#   while(abs(loglik-loglik.old)>tol&cyc<maxit){
+#     loglik.old=loglik
+#     res=EMupd.mix(y,smooth,pi,phi,n,K,B)
+#     pi=res$pi
+#     phi=res$phi
+#     phi.unsmoothed=res$phi.unsmoothed
+#     gamma=res$gamma
+#     lambda=res$lambda
+#     if(smooth==TRUE){
+#       loglik=negloglik.mix(y,pi,phi.unsmoothed,n,K,B)
+#     }else{
+#       loglik=negloglik.mix(y,pi,phi,n,K,B)    
+#     }
+#     cyc=cyc+1
+# #print(cyc)
+# #print(pi)
+# print(loglik)
+#   }
+#   return(list(pi=pi,phi=phi,phi.unsmoothed,lambda=lambda,gamma=gamma,loglik=loglik))
+# }
+
+
+normalized.l2norm = function(x, y){
+  return(rowMeans((x - y)^2)/rowMeans(y^2))
+}
+
+tol.criterion = function(phi.old, phi){
+  return(100 * mean(normalized.l2norm(phi.old, phi)))
+}
+
 EMproc.mix=function(y,smooth,pi,phi,n,K,B,tol,maxit){
-  loglik.old=Inf
-  loglik=negloglik.mix(y,pi,phi,n,K,B)
+  phi.old=matrix(Inf,nrow=K,ncol=B)
   cyc=0
-  while(abs(loglik-loglik.old)>tol&cyc<maxit){
-    loglik.old=loglik
+  while(tol.criterion(phi.old,phi)>tol&cyc<maxit){
+    phi.old=phi
     res=EMupd.mix(y,smooth,pi,phi,n,K,B)
     pi=res$pi
     phi=res$phi
@@ -69,12 +107,14 @@ EMproc.mix=function(y,smooth,pi,phi,n,K,B,tol,maxit){
       loglik=negloglik.mix(y,pi,phi,n,K,B)    
     }
     cyc=cyc+1
-#print(cyc)
-#print(pi)
-print(loglik)
+    #print(cyc)
+    #print(pi)
+    print(tol.criterion(phi.old,phi))
+    print(loglik)
   }
   return(list(pi=pi,phi=phi,phi.unsmoothed,lambda=lambda,gamma=gamma,loglik=loglik))
 }
+
 
 cluster.mix=function(y,smooth=TRUE,pi0=NULL,phi0=NULL,K,tol,maxit){
   n=dim(y)[1]
