@@ -1,3 +1,5 @@
+library(smash)
+
 normalize=function(x){
   #if(sum(abs(x))!=0){
     return(x/sum(x))
@@ -33,15 +35,18 @@ EMupd.mix=function(y,smooth,pi,phi,n,K,B){
   phi.unsmoothed=NULL
   if(smooth==TRUE){
     phi.unsmoothed=phi
+    lambda.unsmoothed=lambda
     lambda=smooth.lambda(lambda)
+    lambda[is.na(lambda)]=lambda.unsmoothed[is.na(lambda)]
     phi=lambda/lscale
   }
-plot(NA,xlim=c(0,1024),ylim=c(0,0.01))
-lines(phi[1,])
-lines(phi[2,])
-lines(phi[3,])
-lines(phi[4,])
+  
+  plot(NA,xlim=c(0,2048),ylim=c(0,0.01))
+  lines(phi[1,])
+  lines(phi[2,])
+  lines(phi[3,])
 
+  
   return(list(pi=pi,phi=phi,phi.unsmoothed=phi.unsmoothed,lambda=lambda,gamma=gamma))
 }
 
@@ -82,18 +87,23 @@ negloglik.mix=function(y,pi,phi,n,K,B){
 # }
 
 
-normalized.l2norm = function(x, y){
-  return(rowMeans((x - y)^2)/rowMeans(y^2))
+rowquantiles = function(x, q) apply(x, 1, quantile, probs = q)
+
+normalized.norm = function(x, y){
+  return(rowquantiles(abs(x - y), 0.5)*dim(y)[2])
+#  return(rowquantiles(abs(x - y), 0.95))
 }
 
-tol.criterion = function(phi.old, phi){
-  return(100 * mean(normalized.l2norm(phi.old, phi)))
+tol.criterion = function(phi.old, phi, pi.old, pi){
+  return(max(max(normalized.norm(phi.old, phi)), mean(normalized.norm(pi.old, pi))))
 }
 
 EMproc.mix=function(y,smooth,pi,phi,n,K,B,tol,maxit){
+  pi.old=matrix(Inf,nrow=n,ncol=K)
   phi.old=matrix(Inf,nrow=K,ncol=B)
   cyc=0
-  while(tol.criterion(phi.old,phi)>tol&cyc<maxit){
+  while(tol.criterion(phi.old,phi,pi.old,pi)>tol&cyc<maxit){
+    pi.old=pi
     phi.old=phi
     res=EMupd.mix(y,smooth,pi,phi,n,K,B)
     pi=res$pi
@@ -107,9 +117,14 @@ EMproc.mix=function(y,smooth,pi,phi,n,K,B,tol,maxit){
       loglik=negloglik.mix(y,pi,phi,n,K,B)    
     }
     cyc=cyc+1
-    #print(cyc)
+    print("iteration")
+    print(cyc)
     #print(pi)
-    print(tol.criterion(phi.old,phi))
+    print("phi difference")
+    print(max(normalized.norm(phi.old, phi)))
+    print("pi difference")
+    print(mean(normalized.norm(pi.old, pi)))
+    print("negative loglikelihood")
     print(loglik)
   }
   return(list(pi=pi,phi=phi,phi.unsmoothed,lambda=lambda,gamma=gamma,loglik=loglik))

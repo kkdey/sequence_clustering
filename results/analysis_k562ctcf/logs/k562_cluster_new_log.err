@@ -1,0 +1,41 @@
+Loading required package: Rcpp
+Loading required package: ashr
+Loading required package: truncnorm
+Loading required package: plyr
+Loading required package: SQUAREM
+Loading required package: doParallel
+Loading required package: foreach
+Loading required package: iterators
+Loading required package: parallel
+Loading required package: pscl
+Loading required package: MASS
+Loading required package: lattice
+Classes and Methods for R developed in the
+
+Political Science Computational Laboratory
+
+Department of Political Science
+
+Stanford University
+
+Simon Jackman
+
+hurdle and zeroinfl functions by Achim Zeileis
+
+Loading required package: wavethresh
+WaveThresh: R wavelet software, release 4.6.6, installed
+
+Copyright Guy Nason and others 1993-2013
+
+Note: nlevels has been renamed to nlevelsWT
+
+Loading required package: Matrix
+
+Attaching package: ‘Matrix’
+
+The following objects are masked from ‘package:base’:
+
+    crossprod, tcrossprod
+
+Loading required package: data.table
+Loading required package: caTools

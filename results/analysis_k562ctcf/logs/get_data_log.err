@@ -1,0 +1,33 @@
+Loading required package: Rcpp
+Loading required package: ashr
+Loading required package: truncnorm
+Loading required package: SQUAREM
+Loading required package: doParallel
+Loading required package: foreach
+Loading required package: iterators
+Loading required package: parallel
+Loading required package: pscl
+Loading required package: MASS
+Loading required package: mvtnorm
+Loading required package: coda
+Loading required package: lattice
+Loading required package: gam
+Loading required package: splines
+Loaded gam 1.09.1
+
+Loading required package: vcd
+Loading required package: grid
+Classes and Methods for R developed in the
+
+Political Science Computational Laboratory
+
+Department of Political Science
+
+Stanford University
+
+Simon Jackman
+
+hurdle and zeroinfl functions by Achim Zeileis
+
+Loading required package: tools
+Loading required package: data.table

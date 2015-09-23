@@ -39,17 +39,17 @@ for(i in 1:n){
   p.mult=colSums((pi.true[i,]%o%rep(1,B))*phi.true)
   y[i,]=rmultinom(1,yt[i],p.mult)
 }
+negloglik.mix(y,pi.true,phi.true,20,4,1024)
 
+y=matrix(0,nrow=n,ncol=B)
+for(i in 1:n){
+  for(b in 1:B){
+    lambda=sum(pi.true[i,]*lambda.true[,b])
+    y[i,b]=rpois(1,lambda)
+  }
+}
 
-# y=matrix(0,nrow=n,ncol=B)
-# for(i in 1:n){
-#   for(b in 1:B){
-#     lambda=sum(pi.true[i,]*lambda.true[,b])
-#     y[i,b]=rpois(1,lambda)
-#   }
-# }
-
-res=cluster.mix(y,smooth=FALSE,K=4,tol=1e-4,maxit=4000)
+res=cluster.mix(y,smooth=TRUE,K=4,tol=1e-4,maxit=4000)
 res.smooth=cluster.mix(y,K=4,tol=1e-4,maxit=4000)
 res.tpx=topics(y,4)
 apply(res.tpx$omega,1,get.max)
@@ -87,3 +87,43 @@ lines(lambda.true[3,])
 plot(lambda.smooth[4,],ylim=c(0,2),type='l',col=4)
 lines(res.smooth$lambda[3,],col=2)
 lines(lambda.true[1,])
+
+
+
+
+
+
+#####
+plot(NA,xlim=c(0,1024),ylim=c(0,0.01))
+lines(phi.true[1,],col=2)
+lines(phi.true[2,],col=2)
+lines(phi.true[3,],col=2)
+lines(phi.true[4,],col=2)
+lines(res.tpx$theta[,2],col=4)
+lines(res.tpx$theta[,1],col=4)
+lines(res.tpx$theta[,3],col=4)
+lines(res.tpx$theta[,4],col=4)
+
+
+rs=rowSums(y)
+colSums(rs%o%rep(1,4)*res.smooth$pi)
+
+
+plot(NA,xlim=c(0,1024),ylim=c(0,10))
+lines(res.smooth$phi[1,]*sum(lambda.true[1,]),col=2)
+lines(res.smooth$phi[2,]*sum(lambda.true[2,]),col=2)
+lines(res.smooth$phi[3,]*sum(lambda.true[3,]),col=2)
+lines(res.smooth$phi[4,]*sum(lambda.true[4,]),col=2)
+lines(res.tpx$ph)
+
+tt=0
+for(j in 1:500){
+  y=matrix(0,nrow=n,ncol=B)
+  for(i in 1:n){
+    for(b in 1:B){
+      lambda=sum(pi.true[i,]*lambda.true[,b])
+      y[i,b]=rpois(1,lambda)
+    }
+  }
+  tt[j]=negloglik.mix(y,pi.true,phi.true,20,4,1024)
+}

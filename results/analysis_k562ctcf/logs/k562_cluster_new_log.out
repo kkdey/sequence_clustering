@@ -1,0 +1,2801 @@
+[1] 2000 1024
+[1] "iteration"
+[1] 1
+[1] "phi difference"
+[1] 0.4884668
+[1] "pi difference"
+[1] 0.02613898
+[1] "negative loglikelihood"
+[1] 2017357
+[1] "iteration"
+[1] 2
+[1] "phi difference"
+[1] 0.0981829
+[1] "pi difference"
+[1] 0.01870559
+[1] "negative loglikelihood"
+[1] 2015827
+[1] "iteration"
+[1] 3
+[1] "phi difference"
+[1] 0.116923
+[1] "pi difference"
+[1] 0.01700557
+[1] "negative loglikelihood"
+[1] 2013056
+[1] "iteration"
+[1] 4
+[1] "phi difference"
+[1] 0.1271727
+[1] "pi difference"
+[1] 0.01779542
+[1] "negative loglikelihood"
+[1] 2008989
+[1] "iteration"
+[1] 5
+[1] "phi difference"
+[1] 0.1044585
+[1] "pi difference"
+[1] 0.0192367
+[1] "negative loglikelihood"
+[1] 2003463
+[1] "iteration"
+[1] 6
+[1] "phi difference"
+[1] 0.09674904
+[1] "pi difference"
+[1] 0.02038119
+[1] "negative loglikelihood"
+[1] 1997108
+[1] "iteration"
+[1] 7
+[1] "phi difference"
+[1] 0.08038408
+[1] "pi difference"
+[1] 0.01999832
+[1] "negative loglikelihood"
+[1] 1991003
+[1] "iteration"
+[1] 8
+[1] "phi difference"
+[1] 0.1028371
+[1] "pi difference"
+[1] 0.01885813
+[1] "negative loglikelihood"
+[1] 1985654
+[1] "iteration"
+[1] 9
+[1] "phi difference"
+[1] 0.09825559
+[1] "pi difference"
+[1] 0.01736867
+[1] "negative loglikelihood"
+[1] 1980946
+[1] "iteration"
+[1] 10
+[1] "phi difference"
+[1] 0.08071494
+[1] "pi difference"
+[1] 0.01563981
+[1] "negative loglikelihood"
+[1] 1976878
+[1] "iteration"
+[1] 11
+[1] "phi difference"
+[1] 0.05825169
+[1] "pi difference"
+[1] 0.01411158
+[1] "negative loglikelihood"
+[1] 1973504
+[1] "iteration"
+[1] 12
+[1] "phi difference"
+[1] 0.04135672
+[1] "pi difference"
+[1] 0.01288053
+[1] "negative loglikelihood"
+[1] 1970813
+[1] "iteration"
+[1] 13
+[1] "phi difference"
+[1] 0.04026067
+[1] "pi difference"
+[1] 0.01209397
+[1] "negative loglikelihood"
+[1] 1968691
+[1] "iteration"
+[1] 14
+[1] "phi difference"
+[1] 0.03328132
+[1] "pi difference"
+[1] 0.01165253
+[1] "negative loglikelihood"
+[1] 1967004
+[1] "iteration"
+[1] 15
+[1] "phi difference"
+[1] 0.02435001
+[1] "pi difference"
+[1] 0.01113156
+[1] "negative loglikelihood"
+[1] 1965632
+[1] "iteration"
+[1] 16
+[1] "phi difference"
+[1] 0.02224565
+[1] "pi difference"
+[1] 0.01075816
+[1] "negative loglikelihood"
+[1] 1964493
+[1] "iteration"
+[1] 17
+[1] "phi difference"
+[1] 0.02145463
+[1] "pi difference"
+[1] 0.01055496
+[1] "negative loglikelihood"
+[1] 1963538
+[1] "iteration"
+[1] 18
+[1] "phi difference"
+[1] 0.02065505
+[1] "pi difference"
+[1] 0.01041634
+[1] "negative loglikelihood"
+[1] 1962726
+[1] "iteration"
+[1] 19
+[1] "phi difference"
+[1] 0.019926
+[1] "pi difference"
+[1] 0.01027418
+[1] "negative loglikelihood"
+[1] 1962025
+[1] "iteration"
+[1] 20
+[1] "phi difference"
+[1] 0.01923088
+[1] "pi difference"
+[1] 0.01008994
+[1] "negative loglikelihood"
+[1] 1961400
+[1] "iteration"
+[1] 21
+[1] "phi difference"
+[1] 0.0187484
+[1] "pi difference"
+[1] 0.009924048
+[1] "negative loglikelihood"
+[1] 1960834
+[1] "iteration"
+[1] 22
+[1] "phi difference"
+[1] 0.01867477
+[1] "pi difference"
+[1] 0.009777743
+[1] "negative loglikelihood"
+[1] 1960317
+[1] "iteration"
+[1] 23
+[1] "phi difference"
+[1] 0.01917879
+[1] "pi difference"
+[1] 0.009558556
+[1] "negative loglikelihood"
+[1] 1959845
+[1] "iteration"
+[1] 24
+[1] "phi difference"
+[1] 0.02100995
+[1] "pi difference"
+[1] 0.009321856
+[1] "negative loglikelihood"
+[1] 1959414
+[1] "iteration"
+[1] 25
+[1] "phi difference"
+[1] 0.02511583
+[1] "pi difference"
+[1] 0.009106314
+[1] "negative loglikelihood"
+[1] 1959023
+[1] "iteration"
+[1] 26
+[1] "phi difference"
+[1] 0.03336145
+[1] "pi difference"
+[1] 0.008870486
+[1] "negative loglikelihood"
+[1] 1958671
+[1] "iteration"
+[1] 27
+[1] "phi difference"
+[1] 0.04873322
+[1] "pi difference"
+[1] 0.008650668
+[1] "negative loglikelihood"
+[1] 1958360
+[1] "iteration"
+[1] 28
+[1] "phi difference"
+[1] 0.05165546
+[1] "pi difference"
+[1] 0.008524779
+[1] "negative loglikelihood"
+[1] 1958090
+[1] "iteration"
+[1] 29
+[1] "phi difference"
+[1] 0.05498382
+[1] "pi difference"
+[1] 0.008383041
+[1] "negative loglikelihood"
+[1] 1957842
+[1] "iteration"
+[1] 30
+[1] "phi difference"
+[1] 0.01029009
+[1] "pi difference"
+[1] 0.008157715
+[1] "negative loglikelihood"
+[1] 1957614
+[1] "iteration"
+[1] 31
+[1] "phi difference"
+[1] 0.01118373
+[1] "pi difference"
+[1] 0.007815242
+[1] "negative loglikelihood"
+[1] 1957375
+[1] "iteration"
+[1] 32
+[1] "phi difference"
+[1] 0.01152642
+[1] "pi difference"
+[1] 0.007462675
+[1] "negative loglikelihood"
+[1] 1957163
+[1] "iteration"
+[1] 33
+[1] "phi difference"
+[1] 0.01148912
+[1] "pi difference"
+[1] 0.007110635
+[1] "negative loglikelihood"
+[1] 1956973
+[1] "iteration"
+[1] 34
+[1] "phi difference"
+[1] 0.01142664
+[1] "pi difference"
+[1] 0.006761836
+[1] "negative loglikelihood"
+[1] 1956805
+[1] "iteration"
+[1] 35
+[1] "phi difference"
+[1] 0.01131748
+[1] "pi difference"
+[1] 0.006440396
+[1] "negative loglikelihood"
+[1] 1956655
+[1] "iteration"
+[1] 36
+[1] "phi difference"
+[1] 0.01112957
+[1] "pi difference"
+[1] 0.006139475
+[1] "negative loglikelihood"
+[1] 1956521
+[1] "iteration"
+[1] 37
+[1] "phi difference"
+[1] 0.0109224
+[1] "pi difference"
+[1] 0.00583619
+[1] "negative loglikelihood"
+[1] 1956403
+[1] "iteration"
+[1] 38
+[1] "phi difference"
+[1] 0.008257216
+[1] "pi difference"
+[1] 0.005532066
+[1] "negative loglikelihood"
+[1] 1956299
+[1] "iteration"
+[1] 39
+[1] "phi difference"
+[1] 0.006635656
+[1] "pi difference"
+[1] 0.005307635
+[1] "negative loglikelihood"
+[1] 1956201
+[1] "iteration"
+[1] 40
+[1] "phi difference"
+[1] 0.005685867
+[1] "pi difference"
+[1] 0.005090899
+[1] "negative loglikelihood"
+[1] 1956112
+[1] "iteration"
+[1] 41
+[1] "phi difference"
+[1] 0.005207863
+[1] "pi difference"
+[1] 0.004888328
+[1] "negative loglikelihood"
+[1] 1956026
+[1] "iteration"
+[1] 42
+[1] "phi difference"
+[1] 0.005199403
+[1] "pi difference"
+[1] 0.004700049
+[1] "negative loglikelihood"
+[1] 1955946
+[1] "iteration"
+[1] 43
+[1] "phi difference"
+[1] 0.005136864
+[1] "pi difference"
+[1] 0.004525771
+[1] "negative loglikelihood"
+[1] 1955872
+[1] "iteration"
+[1] 44
+[1] "phi difference"
+[1] 0.005059946
+[1] "pi difference"
+[1] 0.00435993
+[1] "negative loglikelihood"
+[1] 1955805
+[1] "iteration"
+[1] 45
+[1] "phi difference"
+[1] 0.004989887
+[1] "pi difference"
+[1] 0.004200502
+[1] "negative loglikelihood"
+[1] 1955742
+[1] "iteration"
+[1] 46
+[1] "phi difference"
+[1] 0.004921557
+[1] "pi difference"
+[1] 0.004049042
+[1] "negative loglikelihood"
+[1] 1955685
+[1] "iteration"
+[1] 47
+[1] "phi difference"
+[1] 0.004831378
+[1] "pi difference"
+[1] 0.003897582
+[1] "negative loglikelihood"
+[1] 1955632
+[1] "iteration"
+[1] 48
+[1] "phi difference"
+[1] 0.004735731
+[1] "pi difference"
+[1] 0.003749143
+[1] "negative loglikelihood"
+[1] 1955583
+[1] "iteration"
+[1] 49
+[1] "phi difference"
+[1] 0.004636446
+[1] "pi difference"
+[1] 0.003607042
+[1] "negative loglikelihood"
+[1] 1955538
+[1] "iteration"
+[1] 50
+[1] "phi difference"
+[1] 0.004541437
+[1] "pi difference"
+[1] 0.003470044
+[1] "negative loglikelihood"
+[1] 1955497
+[1] "iteration"
+[1] 51
+[1] "phi difference"
+[1] 0.004466778
+[1] "pi difference"
+[1] 0.003337987
+[1] "negative loglikelihood"
+[1] 1955459
+[1] "iteration"
+[1] 52
+[1] "phi difference"
+[1] 0.004377012
+[1] "pi difference"
+[1] 0.003211738
+[1] "negative loglikelihood"
+[1] 1955425
+[1] "iteration"
+[1] 53
+[1] "phi difference"
+[1] 0.004302669
+[1] "pi difference"
+[1] 0.003090561
+[1] "negative loglikelihood"
+[1] 1955393
+[1] "iteration"
+[1] 54
+[1] "phi difference"
+[1] 0.004213538
+[1] "pi difference"
+[1] 0.002976874
+[1] "negative loglikelihood"
+[1] 1955364
+[1] "iteration"
+[1] 55
+[1] "phi difference"
+[1] 0.004125627
+[1] "pi difference"
+[1] 0.002869905
+[1] "negative loglikelihood"
+[1] 1955337
+[1] "iteration"
+[1] 56
+[1] "phi difference"
+[1] 0.004056071
+[1] "pi difference"
+[1] 0.002765964
+[1] "negative loglikelihood"
+[1] 1955313
+[1] "iteration"
+[1] 57
+[1] "phi difference"
+[1] 0.003999863
+[1] "pi difference"
+[1] 0.002670871
+[1] "negative loglikelihood"
+[1] 1955291
+[1] "iteration"
+[1] 58
+[1] "phi difference"
+[1] 0.003333413
+[1] "pi difference"
+[1] 0.002582873
+[1] "negative loglikelihood"
+[1] 1955271
+[1] "iteration"
+[1] 59
+[1] "phi difference"
+[1] 0.002579345
+[1] "pi difference"
+[1] 0.002505292
+[1] "negative loglikelihood"
+[1] 1955251
+[1] "iteration"
+[1] 60
+[1] "phi difference"
+[1] 0.00219971
+[1] "pi difference"
+[1] 0.002432276
+[1] "negative loglikelihood"
+[1] 1955232
+[1] "iteration"
+[1] 61
+[1] "phi difference"
+[1] 0.001964714
+[1] "pi difference"
+[1] 0.002362899
+[1] "negative loglikelihood"
+[1] 1955213
+[1] "iteration"
+[1] 62
+[1] "phi difference"
+[1] 0.001803086
+[1] "pi difference"
+[1] 0.002296095
+[1] "negative loglikelihood"
+[1] 1955196
+[1] "iteration"
+[1] 63
+[1] "phi difference"
+[1] 0.001688817
+[1] "pi difference"
+[1] 0.002231177
+[1] "negative loglikelihood"
+[1] 1955179
+[1] "iteration"
+[1] 64
+[1] "phi difference"
+[1] 0.0016207
+[1] "pi difference"
+[1] 0.002168008
+[1] "negative loglikelihood"
+[1] 1955164
+[1] "iteration"
+[1] 65
+[1] "phi difference"
+[1] 0.001557529
+[1] "pi difference"
+[1] 0.002106421
+[1] "negative loglikelihood"
+[1] 1955149
+[1] "iteration"
+[1] 66
+[1] "phi difference"
+[1] 0.001498366
+[1] "pi difference"
+[1] 0.002047725
+[1] "negative loglikelihood"
+[1] 1955136
+[1] "iteration"
+[1] 67
+[1] "phi difference"
+[1] 0.001441957
+[1] "pi difference"
+[1] 0.001991644
+[1] "negative loglikelihood"
+[1] 1955123
+[1] "iteration"
+[1] 68
+[1] "phi difference"
+[1] 0.001389535
+[1] "pi difference"
+[1] 0.001937908
+[1] "negative loglikelihood"
+[1] 1955111
+[1] "iteration"
+[1] 69
+[1] "phi difference"
+[1] 0.001340226
+[1] "pi difference"
+[1] 0.001886567
+[1] "negative loglikelihood"
+[1] 1955100
+[1] "iteration"
+[1] 70
+[1] "phi difference"
+[1] 0.001292767
+[1] "pi difference"
+[1] 0.001837116
+[1] "negative loglikelihood"
+[1] 1955089
+[1] "iteration"
+[1] 71
+[1] "phi difference"
+[1] 0.001248298
+[1] "pi difference"
+[1] 0.001789335
+[1] "negative loglikelihood"
+[1] 1955079
+[1] "iteration"
+[1] 72
+[1] "phi difference"
+[1] 0.001205924
+[1] "pi difference"
+[1] 0.001743791
+[1] "negative loglikelihood"
+[1] 1955069
+[1] "iteration"
+[1] 73
+[1] "phi difference"
+[1] 0.00116571
+[1] "pi difference"
+[1] 0.001699844
+[1] "negative loglikelihood"
+[1] 1955060
+[1] "iteration"
+[1] 74
+[1] "phi difference"
+[1] 0.00112808
+[1] "pi difference"
+[1] 0.001657076
+[1] "negative loglikelihood"
+[1] 1955052
+[1] "iteration"
+[1] 75
+[1] "phi difference"
+[1] 0.001091979
+[1] "pi difference"
+[1] 0.001615854
+[1] "negative loglikelihood"
+[1] 1955043
+[1] "iteration"
+[1] 76
+[1] "phi difference"
+[1] 0.001058119
+[1] "pi difference"
+[1] 0.001577179
+[1] "negative loglikelihood"
+[1] 1955036
+[1] "iteration"
+[1] 77
+[1] "phi difference"
+[1] 0.001025869
+[1] "pi difference"
+[1] 0.001540668
+[1] "negative loglikelihood"
+[1] 1955028
+[1] "iteration"
+[1] 78
+[1] "phi difference"
+[1] 0.0009946894
+[1] "pi difference"
+[1] 0.001506315
+[1] "negative loglikelihood"
+[1] 1955021
+[1] "iteration"
+[1] 79
+[1] "phi difference"
+[1] 0.0009656858
+[1] "pi difference"
+[1] 0.001472899
+[1] "negative loglikelihood"
+[1] 1955015
+[1] "iteration"
+[1] 80
+[1] "phi difference"
+[1] 0.0009379756
+[1] "pi difference"
+[1] 0.001440445
+[1] "negative loglikelihood"
+[1] 1955009
+[1] "iteration"
+[1] 81
+[1] "phi difference"
+[1] 0.0009111091
+[1] "pi difference"
+[1] 0.001409085
+[1] "negative loglikelihood"
+[1] 1955003
+[1] "iteration"
+[1] 82
+[1] "phi difference"
+[1] 0.0008857777
+[1] "pi difference"
+[1] 0.001378295
+[1] "negative loglikelihood"
+[1] 1954997
+[1] "iteration"
+[1] 83
+[1] "phi difference"
+[1] 0.00086198
+[1] "pi difference"
+[1] 0.001348371
+[1] "negative loglikelihood"
+[1] 1954991
+[1] "iteration"
+[1] 84
+[1] "phi difference"
+[1] 0.0008385757
+[1] "pi difference"
+[1] 0.001319431
+[1] "negative loglikelihood"
+[1] 1954986
+[1] "iteration"
+[1] 85
+[1] "phi difference"
+[1] 0.0008164695
+[1] "pi difference"
+[1] 0.001291881
+[1] "negative loglikelihood"
+[1] 1954981
+[1] "iteration"
+[1] 86
+[1] "phi difference"
+[1] 0.0007956456
+[1] "pi difference"
+[1] 0.001265688
+[1] "negative loglikelihood"
+[1] 1954977
+[1] "iteration"
+[1] 87
+[1] "phi difference"
+[1] 0.0007750959
+[1] "pi difference"
+[1] 0.00124072
+[1] "negative loglikelihood"
+[1] 1954972
+[1] "iteration"
+[1] 88
+[1] "phi difference"
+[1] 0.0007554475
+[1] "pi difference"
+[1] 0.001216555
+[1] "negative loglikelihood"
+[1] 1954968
+[1] "iteration"
+[1] 89
+[1] "phi difference"
+[1] 0.0007367745
+[1] "pi difference"
+[1] 0.001192859
+[1] "negative loglikelihood"
+[1] 1954963
+[1] "iteration"
+[1] 90
+[1] "phi difference"
+[1] 0.0007184599
+[1] "pi difference"
+[1] 0.001169663
+[1] "negative loglikelihood"
+[1] 1954959
+[1] "iteration"
+[1] 91
+[1] "phi difference"
+[1] 0.0007010852
+[1] "pi difference"
+[1] 0.001147441
+[1] "negative loglikelihood"
+[1] 1954955
+[1] "iteration"
+[1] 92
+[1] "phi difference"
+[1] 0.0006841353
+[1] "pi difference"
+[1] 0.001125353
+[1] "negative loglikelihood"
+[1] 1954952
+[1] "iteration"
+[1] 93
+[1] "phi difference"
+[1] 0.0006679396
+[1] "pi difference"
+[1] 0.001103864
+[1] "negative loglikelihood"
+[1] 1954948
+[1] "iteration"
+[1] 94
+[1] "phi difference"
+[1] 0.0006520277
+[1] "pi difference"
+[1] 0.001082539
+[1] "negative loglikelihood"
+[1] 1954945
+[1] "iteration"
+[1] 95
+[1] "phi difference"
+[1] 0.0006379465
+[1] "pi difference"
+[1] 0.001061457
+[1] "negative loglikelihood"
+[1] 1954941
+[1] "iteration"
+[1] 96
+[1] "phi difference"
+[1] 0.0006245126
+[1] "pi difference"
+[1] 0.001040566
+[1] "negative loglikelihood"
+[1] 1954938
+[1] "iteration"
+[1] 97
+[1] "phi difference"
+[1] 0.0006121287
+[1] "pi difference"
+[1] 0.00102043
+[1] "negative loglikelihood"
+[1] 1954935
+[1] "iteration"
+[1] 98
+[1] "phi difference"
+[1] 0.0006011865
+[1] "pi difference"
+[1] 0.001001057
+[1] "negative loglikelihood"
+[1] 1954932
+[1] "iteration"
+[1] 99
+[1] "phi difference"
+[1] 0.0005893951
+[1] "pi difference"
+[1] 0.0009823887
+[1] "negative loglikelihood"
+[1] 1954929
+[1] "iteration"
+[1] 100
+[1] "phi difference"
+[1] 0.00057772
+[1] "pi difference"
+[1] 0.0009640343
+[1] "negative loglikelihood"
+[1] 1954926
+[1] "iteration"
+[1] 101
+[1] "phi difference"
+[1] 0.000566305
+[1] "pi difference"
+[1] 0.0009458688
+[1] "negative loglikelihood"
+[1] 1954923
+[1] "iteration"
+[1] 102
+[1] "phi difference"
+[1] 0.0005561121
+[1] "pi difference"
+[1] 0.00092832
+[1] "negative loglikelihood"
+[1] 1954920
+[1] "iteration"
+[1] 103
+[1] "phi difference"
+[1] 0.0005462148
+[1] "pi difference"
+[1] 0.0009113748
+[1] "negative loglikelihood"
+[1] 1954918
+[1] "iteration"
+[1] 104
+[1] "phi difference"
+[1] 0.000536588
+[1] "pi difference"
+[1] 0.0008946277
+[1] "negative loglikelihood"
+[1] 1954915
+[1] "iteration"
+[1] 105
+[1] "phi difference"
+[1] 0.0005266721
+[1] "pi difference"
+[1] 0.000878324
+[1] "negative loglikelihood"
+[1] 1954913
+[1] "iteration"
+[1] 106
+[1] "phi difference"
+[1] 0.0005164678
+[1] "pi difference"
+[1] 0.0008625125
+[1] "negative loglikelihood"
+[1] 1954910
+[1] "iteration"
+[1] 107
+[1] "phi difference"
+[1] 0.0005069577
+[1] "pi difference"
+[1] 0.0008468964
+[1] "negative loglikelihood"
+[1] 1954908
+[1] "iteration"
+[1] 108
+[1] "phi difference"
+[1] 0.0004982542
+[1] "pi difference"
+[1] 0.0008316383
+[1] "negative loglikelihood"
+[1] 1954906
+[1] "iteration"
+[1] 109
+[1] "phi difference"
+[1] 0.0004897353
+[1] "pi difference"
+[1] 0.0008168445
+[1] "negative loglikelihood"
+[1] 1954904
+[1] "iteration"
+[1] 110
+[1] "phi difference"
+[1] 0.0004813616
+[1] "pi difference"
+[1] 0.0008024022
+[1] "negative loglikelihood"
+[1] 1954902
+[1] "iteration"
+[1] 111
+[1] "phi difference"
+[1] 0.0004733125
+[1] "pi difference"
+[1] 0.0007884448
+[1] "negative loglikelihood"
+[1] 1954900
+[1] "iteration"
+[1] 112
+[1] "phi difference"
+[1] 0.0004647215
+[1] "pi difference"
+[1] 0.000774899
+[1] "negative loglikelihood"
+[1] 1954898
+[1] "iteration"
+[1] 113
+[1] "phi difference"
+[1] 0.0004564929
+[1] "pi difference"
+[1] 0.0007618005
+[1] "negative loglikelihood"
+[1] 1954896
+[1] "iteration"
+[1] 114
+[1] "phi difference"
+[1] 0.0004487988
+[1] "pi difference"
+[1] 0.0007492315
+[1] "negative loglikelihood"
+[1] 1954894
+[1] "iteration"
+[1] 115
+[1] "phi difference"
+[1] 0.000440974
+[1] "pi difference"
+[1] 0.0007370356
+[1] "negative loglikelihood"
+[1] 1954893
+[1] "iteration"
+[1] 116
+[1] "phi difference"
+[1] 0.0004335852
+[1] "pi difference"
+[1] 0.0007250279
+[1] "negative loglikelihood"
+[1] 1954891
+[1] "iteration"
+[1] 117
+[1] "phi difference"
+[1] 0.0004258397
+[1] "pi difference"
+[1] 0.0007133479
+[1] "negative loglikelihood"
+[1] 1954889
+[1] "iteration"
+[1] 118
+[1] "phi difference"
+[1] 0.0004187698
+[1] "pi difference"
+[1] 0.0007019894
+[1] "negative loglikelihood"
+[1] 1954888
+[1] "iteration"
+[1] 119
+[1] "phi difference"
+[1] 0.0004118572
+[1] "pi difference"
+[1] 0.0006907389
+[1] "negative loglikelihood"
+[1] 1954886
+[1] "iteration"
+[1] 120
+[1] "phi difference"
+[1] 0.000404915
+[1] "pi difference"
+[1] 0.0006797424
+[1] "negative loglikelihood"
+[1] 1954885
+[1] "iteration"
+[1] 121
+[1] "phi difference"
+[1] 0.0003977438
+[1] "pi difference"
+[1] 0.0006690351
+[1] "negative loglikelihood"
+[1] 1954883
+[1] "iteration"
+[1] 122
+[1] "phi difference"
+[1] 0.0003913234
+[1] "pi difference"
+[1] 0.0006583583
+[1] "negative loglikelihood"
+[1] 1954882
+[1] "iteration"
+[1] 123
+[1] "phi difference"
+[1] 0.0003850922
+[1] "pi difference"
+[1] 0.0006477569
+[1] "negative loglikelihood"
+[1] 1954881
+[1] "iteration"
+[1] 124
+[1] "phi difference"
+[1] 0.0003782203
+[1] "pi difference"
+[1] 0.0006374246
+[1] "negative loglikelihood"
+[1] 1954879
+[1] "iteration"
+[1] 125
+[1] "phi difference"
+[1] 0.0003723013
+[1] "pi difference"
+[1] 0.0006273545
+[1] "negative loglikelihood"
+[1] 1954878
+[1] "iteration"
+[1] 126
+[1] "phi difference"
+[1] 0.0003662788
+[1] "pi difference"
+[1] 0.0006174066
+[1] "negative loglikelihood"
+[1] 1954877
+[1] "iteration"
+[1] 127
+[1] "phi difference"
+[1] 0.0003598992
+[1] "pi difference"
+[1] 0.0006076175
+[1] "negative loglikelihood"
+[1] 1954876
+[1] "iteration"
+[1] 128
+[1] "phi difference"
+[1] 0.0003546469
+[1] "pi difference"
+[1] 0.0005979687
+[1] "negative loglikelihood"
+[1] 1954874
+[1] "iteration"
+[1] 129
+[1] "phi difference"
+[1] 0.0003489236
+[1] "pi difference"
+[1] 0.0005884893
+[1] "negative loglikelihood"
+[1] 1954873
+[1] "iteration"
+[1] 130
+[1] "phi difference"
+[1] 0.0003441072
+[1] "pi difference"
+[1] 0.0005791288
+[1] "negative loglikelihood"
+[1] 1954872
+[1] "iteration"
+[1] 131
+[1] "phi difference"
+[1] 0.0003389051
+[1] "pi difference"
+[1] 0.0005699015
+[1] "negative loglikelihood"
+[1] 1954871
+[1] "iteration"
+[1] 132
+[1] "phi difference"
+[1] 0.0003339302
+[1] "pi difference"
+[1] 0.000560924
+[1] "negative loglikelihood"
+[1] 1954870
+[1] "iteration"
+[1] 133
+[1] "phi difference"
+[1] 0.0003291005
+[1] "pi difference"
+[1] 0.000552277
+[1] "negative loglikelihood"
+[1] 1954869
+[1] "iteration"
+[1] 134
+[1] "phi difference"
+[1] 0.0003239475
+[1] "pi difference"
+[1] 0.0005439373
+[1] "negative loglikelihood"
+[1] 1954868
+[1] "iteration"
+[1] 135
+[1] "phi difference"
+[1] 0.0003193249
+[1] "pi difference"
+[1] 0.0005358087
+[1] "negative loglikelihood"
+[1] 1954867
+[1] "iteration"
+[1] 136
+[1] "phi difference"
+[1] 0.0003145269
+[1] "pi difference"
+[1] 0.0005279495
+[1] "negative loglikelihood"
+[1] 1954866
+[1] "iteration"
+[1] 137
+[1] "phi difference"
+[1] 0.0003103187
+[1] "pi difference"
+[1] 0.0005202619
+[1] "negative loglikelihood"
+[1] 1954865
+[1] "iteration"
+[1] 138
+[1] "phi difference"
+[1] 0.0003055349
+[1] "pi difference"
+[1] 0.0005127996
+[1] "negative loglikelihood"
+[1] 1954864
+[1] "iteration"
+[1] 139
+[1] "phi difference"
+[1] 0.0003013803
+[1] "pi difference"
+[1] 0.0005054836
+[1] "negative loglikelihood"
+[1] 1954863
+[1] "iteration"
+[1] 140
+[1] "phi difference"
+[1] 0.0002975154
+[1] "pi difference"
+[1] 0.0004982281
+[1] "negative loglikelihood"
+[1] 1954863
+[1] "iteration"
+[1] 141
+[1] "phi difference"
+[1] 0.0002933391
+[1] "pi difference"
+[1] 0.0004911643
+[1] "negative loglikelihood"
+[1] 1954862
+[1] "iteration"
+[1] 142
+[1] "phi difference"
+[1] 0.0002894452
+[1] "pi difference"
+[1] 0.0004842574
+[1] "negative loglikelihood"
+[1] 1954861
+[1] "iteration"
+[1] 143
+[1] "phi difference"
+[1] 0.0002851669
+[1] "pi difference"
+[1] 0.0004774694
+[1] "negative loglikelihood"
+[1] 1954860
+[1] "iteration"
+[1] 144
+[1] "phi difference"
+[1] 0.0002816145
+[1] "pi difference"
+[1] 0.0004708398
+[1] "negative loglikelihood"
+[1] 1954859
+[1] "iteration"
+[1] 145
+[1] "phi difference"
+[1] 0.0002775238
+[1] "pi difference"
+[1] 0.0004644138
+[1] "negative loglikelihood"
+[1] 1954859
+[1] "iteration"
+[1] 146
+[1] "phi difference"
+[1] 0.0002740713
+[1] "pi difference"
+[1] 0.0004581281
+[1] "negative loglikelihood"
+[1] 1954858
+[1] "iteration"
+[1] 147
+[1] "phi difference"
+[1] 0.0002701042
+[1] "pi difference"
+[1] 0.0004519809
+[1] "negative loglikelihood"
+[1] 1954857
+[1] "iteration"
+[1] 148
+[1] "phi difference"
+[1] 0.0002668798
+[1] "pi difference"
+[1] 0.0004459601
+[1] "negative loglikelihood"
+[1] 1954857
+[1] "iteration"
+[1] 149
+[1] "phi difference"
+[1] 0.0002635667
+[1] "pi difference"
+[1] 0.0004400342
+[1] "negative loglikelihood"
+[1] 1954856
+[1] "iteration"
+[1] 150
+[1] "phi difference"
+[1] 0.0002598018
+[1] "pi difference"
+[1] 0.000434171
+[1] "negative loglikelihood"
+[1] 1954855
+[1] "iteration"
+[1] 151
+[1] "phi difference"
+[1] 0.0002566813
+[1] "pi difference"
+[1] 0.0004284123
+[1] "negative loglikelihood"
+[1] 1954855
+[1] "iteration"
+[1] 152
+[1] "phi difference"
+[1] 0.0002530464
+[1] "pi difference"
+[1] 0.0004228416
+[1] "negative loglikelihood"
+[1] 1954854
+[1] "iteration"
+[1] 153
+[1] "phi difference"
+[1] 0.0002496329
+[1] "pi difference"
+[1] 0.0004174307
+[1] "negative loglikelihood"
+[1] 1954853
+[1] "iteration"
+[1] 154
+[1] "phi difference"
+[1] 0.0002465216
+[1] "pi difference"
+[1] 0.0004121252
+[1] "negative loglikelihood"
+[1] 1954853
+[1] "iteration"
+[1] 155
+[1] "phi difference"
+[1] 0.0002433424
+[1] "pi difference"
+[1] 0.0004069152
+[1] "negative loglikelihood"
+[1] 1954852
+[1] "iteration"
+[1] 156
+[1] "phi difference"
+[1] 0.0002402774
+[1] "pi difference"
+[1] 0.0004018842
+[1] "negative loglikelihood"
+[1] 1954852
+[1] "iteration"
+[1] 157
+[1] "phi difference"
+[1] 0.0002373721
+[1] "pi difference"
+[1] 0.0003970415
+[1] "negative loglikelihood"
+[1] 1954851
+[1] "iteration"
+[1] 158
+[1] "phi difference"
+[1] 0.000234066
+[1] "pi difference"
+[1] 0.0003923411
+[1] "negative loglikelihood"
+[1] 1954850
+[1] "iteration"
+[1] 159
+[1] "phi difference"
+[1] 0.0002310105
+[1] "pi difference"
+[1] 0.0003877032
+[1] "negative loglikelihood"
+[1] 1954850
+[1] "iteration"
+[1] 160
+[1] "phi difference"
+[1] 0.0002281264
+[1] "pi difference"
+[1] 0.0003832228
+[1] "negative loglikelihood"
+[1] 1954849
+[1] "iteration"
+[1] 161
+[1] "phi difference"
+[1] 0.0002252859
+[1] "pi difference"
+[1] 0.0003788226
+[1] "negative loglikelihood"
+[1] 1954849
+[1] "iteration"
+[1] 162
+[1] "phi difference"
+[1] 0.0002224339
+[1] "pi difference"
+[1] 0.0003744677
+[1] "negative loglikelihood"
+[1] 1954848
+[1] "iteration"
+[1] 163
+[1] "phi difference"
+[1] 0.0002197612
+[1] "pi difference"
+[1] 0.0003701856
+[1] "negative loglikelihood"
+[1] 1954848
+[1] "iteration"
+[1] 164
+[1] "phi difference"
+[1] 0.0002167357
+[1] "pi difference"
+[1] 0.000365996
+[1] "negative loglikelihood"
+[1] 1954847
+[1] "iteration"
+[1] 165
+[1] "phi difference"
+[1] 0.0002137566
+[1] "pi difference"
+[1] 0.0003619132
+[1] "negative loglikelihood"
+[1] 1954847
+[1] "iteration"
+[1] 166
+[1] "phi difference"
+[1] 0.0002111317
+[1] "pi difference"
+[1] 0.0003578452
+[1] "negative loglikelihood"
+[1] 1954846
+[1] "iteration"
+[1] 167
+[1] "phi difference"
+[1] 0.0002088224
+[1] "pi difference"
+[1] 0.0003538381
+[1] "negative loglikelihood"
+[1] 1954846
+[1] "iteration"
+[1] 168
+[1] "phi difference"
+[1] 0.0002062959
+[1] "pi difference"
+[1] 0.0003499443
+[1] "negative loglikelihood"
+[1] 1954846
+[1] "iteration"
+[1] 169
+[1] "phi difference"
+[1] 0.000203595
+[1] "pi difference"
+[1] 0.0003461608
+[1] "negative loglikelihood"
+[1] 1954845
+[1] "iteration"
+[1] 170
+[1] "phi difference"
+[1] 0.0002010857
+[1] "pi difference"
+[1] 0.0003423856
+[1] "negative loglikelihood"
+[1] 1954845
+[1] "iteration"
+[1] 171
+[1] "phi difference"
+[1] 0.0001984358
+[1] "pi difference"
+[1] 0.0003386734
+[1] "negative loglikelihood"
+[1] 1954844
+[1] "iteration"
+[1] 172
+[1] "phi difference"
+[1] 0.0001957092
+[1] "pi difference"
+[1] 0.0003349904
+[1] "negative loglikelihood"
+[1] 1954844
+[1] "iteration"
+[1] 173
+[1] "phi difference"
+[1] 0.0001935015
+[1] "pi difference"
+[1] 0.0003314046
+[1] "negative loglikelihood"
+[1] 1954843
+[1] "iteration"
+[1] 174
+[1] "phi difference"
+[1] 0.0001911753
+[1] "pi difference"
+[1] 0.0003278811
+[1] "negative loglikelihood"
+[1] 1954843
+[1] "iteration"
+[1] 175
+[1] "phi difference"
+[1] 0.000188959
+[1] "pi difference"
+[1] 0.0003244053
+[1] "negative loglikelihood"
+[1] 1954843
+[1] "iteration"
+[1] 176
+[1] "phi difference"
+[1] 0.0001863584
+[1] "pi difference"
+[1] 0.0003209903
+[1] "negative loglikelihood"
+[1] 1954842
+[1] "iteration"
+[1] 177
+[1] "phi difference"
+[1] 0.0001839887
+[1] "pi difference"
+[1] 0.0003176335
+[1] "negative loglikelihood"
+[1] 1954842
+[1] "iteration"
+[1] 178
+[1] "phi difference"
+[1] 0.0001816297
+[1] "pi difference"
+[1] 0.0003143779
+[1] "negative loglikelihood"
+[1] 1954841
+[1] "iteration"
+[1] 179
+[1] "phi difference"
+[1] 0.0001792848
+[1] "pi difference"
+[1] 0.0003111572
+[1] "negative loglikelihood"
+[1] 1954841
+[1] "iteration"
+[1] 180
+[1] "phi difference"
+[1] 0.0001771467
+[1] "pi difference"
+[1] 0.000308029
+[1] "negative loglikelihood"
+[1] 1954841
+[1] "iteration"
+[1] 181
+[1] "phi difference"
+[1] 0.0001749497
+[1] "pi difference"
+[1] 0.0003049457
+[1] "negative loglikelihood"
+[1] 1954840
+[1] "iteration"
+[1] 182
+[1] "phi difference"
+[1] 0.0001727149
+[1] "pi difference"
+[1] 0.000301887
+[1] "negative loglikelihood"
+[1] 1954840
+[1] "iteration"
+[1] 183
+[1] "phi difference"
+[1] 0.0001705088
+[1] "pi difference"
+[1] 0.000298844
+[1] "negative loglikelihood"
+[1] 1954839
+[1] "iteration"
+[1] 184
+[1] "phi difference"
+[1] 0.0001686623
+[1] "pi difference"
+[1] 0.0002958338
+[1] "negative loglikelihood"
+[1] 1954839
+[1] "iteration"
+[1] 185
+[1] "phi difference"
+[1] 0.0001665144
+[1] "pi difference"
+[1] 0.0002928072
+[1] "negative loglikelihood"
+[1] 1954839
+[1] "iteration"
+[1] 186
+[1] "phi difference"
+[1] 0.0001644432
+[1] "pi difference"
+[1] 0.0002897976
+[1] "negative loglikelihood"
+[1] 1954838
+[1] "iteration"
+[1] 187
+[1] "phi difference"
+[1] 0.000162308
+[1] "pi difference"
+[1] 0.0002868605
+[1] "negative loglikelihood"
+[1] 1954838
+[1] "iteration"
+[1] 188
+[1] "phi difference"
+[1] 0.000160284
+[1] "pi difference"
+[1] 0.0002839898
+[1] "negative loglikelihood"
+[1] 1954837
+[1] "iteration"
+[1] 189
+[1] "phi difference"
+[1] 0.0001584808
+[1] "pi difference"
+[1] 0.00028123
+[1] "negative loglikelihood"
+[1] 1954837
+[1] "iteration"
+[1] 190
+[1] "phi difference"
+[1] 0.0001565875
+[1] "pi difference"
+[1] 0.0002785194
+[1] "negative loglikelihood"
+[1] 1954837
+[1] "iteration"
+[1] 191
+[1] "phi difference"
+[1] 0.0001545569
+[1] "pi difference"
+[1] 0.0002758458
+[1] "negative loglikelihood"
+[1] 1954836
+[1] "iteration"
+[1] 192
+[1] "phi difference"
+[1] 0.0001523929
+[1] "pi difference"
+[1] 0.0002731625
+[1] "negative loglikelihood"
+[1] 1954836
+[1] "iteration"
+[1] 193
+[1] "phi difference"
+[1] 0.0001506419
+[1] "pi difference"
+[1] 0.0002705209
+[1] "negative loglikelihood"
+[1] 1954836
+[1] "iteration"
+[1] 194
+[1] "phi difference"
+[1] 0.000148685
+[1] "pi difference"
+[1] 0.0002679169
+[1] "negative loglikelihood"
+[1] 1954835
+[1] "iteration"
+[1] 195
+[1] "phi difference"
+[1] 0.0001469632
+[1] "pi difference"
+[1] 0.0002653606
+[1] "negative loglikelihood"
+[1] 1954835
+[1] "iteration"
+[1] 196
+[1] "phi difference"
+[1] 0.0001451485
+[1] "pi difference"
+[1] 0.0002628524
+[1] "negative loglikelihood"
+[1] 1954834
+[1] "iteration"
+[1] 197
+[1] "phi difference"
+[1] 0.0001434899
+[1] "pi difference"
+[1] 0.0002603893
+[1] "negative loglikelihood"
+[1] 1954834
+[1] "iteration"
+[1] 198
+[1] "phi difference"
+[1] 0.0001415982
+[1] "pi difference"
+[1] 0.0002579607
+[1] "negative loglikelihood"
+[1] 1954834
+[1] "iteration"
+[1] 199
+[1] "phi difference"
+[1] 0.0001397642
+[1] "pi difference"
+[1] 0.0002556099
+[1] "negative loglikelihood"
+[1] 1954833
+[1] "iteration"
+[1] 200
+[1] "phi difference"
+[1] 0.0001381762
+[1] "pi difference"
+[1] 0.0002533096
+[1] "negative loglikelihood"
+[1] 1954833
+[1] "iteration"
+[1] 201
+[1] "phi difference"
+[1] 0.0001365096
+[1] "pi difference"
+[1] 0.0002510228
+[1] "negative loglikelihood"
+[1] 1954832
+[1] "iteration"
+[1] 202
+[1] "phi difference"
+[1] 0.0001348517
+[1] "pi difference"
+[1] 0.000248728
+[1] "negative loglikelihood"
+[1] 1954832
+[1] "iteration"
+[1] 203
+[1] "phi difference"
+[1] 0.0001331192
+[1] "pi difference"
+[1] 0.0002465023
+[1] "negative loglikelihood"
+[1] 1954832
+[1] "iteration"
+[1] 204
+[1] "phi difference"
+[1] 0.0001315239
+[1] "pi difference"
+[1] 0.0002443464
+[1] "negative loglikelihood"
+[1] 1954831
+[1] "iteration"
+[1] 205
+[1] "phi difference"
+[1] 0.0001296804
+[1] "pi difference"
+[1] 0.0002422559
+[1] "negative loglikelihood"
+[1] 1954831
+[1] "iteration"
+[1] 206
+[1] "phi difference"
+[1] 0.0001281813
+[1] "pi difference"
+[1] 0.0002402266
+[1] "negative loglikelihood"
+[1] 1954830
+[1] "iteration"
+[1] 207
+[1] "phi difference"
+[1] 0.0001266049
+[1] "pi difference"
+[1] 0.0002381998
+[1] "negative loglikelihood"
+[1] 1954830
+[1] "iteration"
+[1] 208
+[1] "phi difference"
+[1] 0.0001250971
+[1] "pi difference"
+[1] 0.0002362031
+[1] "negative loglikelihood"
+[1] 1954829
+[1] "iteration"
+[1] 209
+[1] "phi difference"
+[1] 0.0001233293
+[1] "pi difference"
+[1] 0.0002342473
+[1] "negative loglikelihood"
+[1] 1954829
+[1] "iteration"
+[1] 210
+[1] "phi difference"
+[1] 0.0001219096
+[1] "pi difference"
+[1] 0.0002323487
+[1] "negative loglikelihood"
+[1] 1954829
+[1] "iteration"
+[1] 211
+[1] "phi difference"
+[1] 0.0001204489
+[1] "pi difference"
+[1] 0.0002304858
+[1] "negative loglikelihood"
+[1] 1954828
+[1] "iteration"
+[1] 212
+[1] "phi difference"
+[1] 0.0001189326
+[1] "pi difference"
+[1] 0.0002286581
+[1] "negative loglikelihood"
+[1] 1954828
+[1] "iteration"
+[1] 213
+[1] "phi difference"
+[1] 0.0001174257
+[1] "pi difference"
+[1] 0.0002268496
+[1] "negative loglikelihood"
+[1] 1954827
+[1] "iteration"
+[1] 214
+[1] "phi difference"
+[1] 0.0001159341
+[1] "pi difference"
+[1] 0.0002250378
+[1] "negative loglikelihood"
+[1] 1954827
+[1] "iteration"
+[1] 215
+[1] "phi difference"
+[1] 0.0001144803
+[1] "pi difference"
+[1] 0.0002232476
+[1] "negative loglikelihood"
+[1] 1954826
+[1] "iteration"
+[1] 216
+[1] "phi difference"
+[1] 0.0001130587
+[1] "pi difference"
+[1] 0.0002214526
+[1] "negative loglikelihood"
+[1] 1954826
+[1] "iteration"
+[1] 217
+[1] "phi difference"
+[1] 0.0001117156
+[1] "pi difference"
+[1] 0.0002196816
+[1] "negative loglikelihood"
+[1] 1954826
+[1] "iteration"
+[1] 218
+[1] "phi difference"
+[1] 0.0001101003
+[1] "pi difference"
+[1] 0.0002179259
+[1] "negative loglikelihood"
+[1] 1954825
+[1] "iteration"
+[1] 219
+[1] "phi difference"
+[1] 0.0001087706
+[1] "pi difference"
+[1] 0.0002161879
+[1] "negative loglikelihood"
+[1] 1954825
+[1] "iteration"
+[1] 220
+[1] "phi difference"
+[1] 0.0001073148
+[1] "pi difference"
+[1] 0.0002144751
+[1] "negative loglikelihood"
+[1] 1954824
+[1] "iteration"
+[1] 221
+[1] "phi difference"
+[1] 0.0001060256
+[1] "pi difference"
+[1] 0.0002127959
+[1] "negative loglikelihood"
+[1] 1954824
+[1] "iteration"
+[1] 222
+[1] "phi difference"
+[1] 0.0001046994
+[1] "pi difference"
+[1] 0.0002111419
+[1] "negative loglikelihood"
+[1] 1954823
+[1] "iteration"
+[1] 223
+[1] "phi difference"
+[1] 0.0001032772
+[1] "pi difference"
+[1] 0.0002095027
+[1] "negative loglikelihood"
+[1] 1954823
+[1] "iteration"
+[1] 224
+[1] "phi difference"
+[1] 0.0001019083
+[1] "pi difference"
+[1] 0.0002078819
+[1] "negative loglikelihood"
+[1] 1954823
+[1] "iteration"
+[1] 225
+[1] "phi difference"
+[1] 0.000100695
+[1] "pi difference"
+[1] 0.000206293
+[1] "negative loglikelihood"
+[1] 1954822
+[1] "iteration"
+[1] 226
+[1] "phi difference"
+[1] 9.936803e-05
+[1] "pi difference"
+[1] 0.0002047001
+[1] "negative loglikelihood"
+[1] 1954822
+[1] "iteration"
+[1] 227
+[1] "phi difference"
+[1] 9.806068e-05
+[1] "pi difference"
+[1] 0.0002030992
+[1] "negative loglikelihood"
+[1] 1954821
+[1] "iteration"
+[1] 228
+[1] "phi difference"
+[1] 9.682951e-05
+[1] "pi difference"
+[1] 0.0002014958
+[1] "negative loglikelihood"
+[1] 1954821
+[1] "iteration"
+[1] 229
+[1] "phi difference"
+[1] 9.549066e-05
+[1] "pi difference"
+[1] 0.0001999238
+[1] "negative loglikelihood"
+[1] 1954820
+[1] "iteration"
+[1] 230
+[1] "phi difference"
+[1] 9.423488e-05
+[1] "pi difference"
+[1] 0.0001984013
+[1] "negative loglikelihood"
+[1] 1954820
+[1] "iteration"
+[1] 231
+[1] "phi difference"
+[1] 9.296268e-05
+[1] "pi difference"
+[1] 0.0001969029
+[1] "negative loglikelihood"
+[1] 1954820
+[1] "iteration"
+[1] 232
+[1] "phi difference"
+[1] 9.173421e-05
+[1] "pi difference"
+[1] 0.0001954525
+[1] "negative loglikelihood"
+[1] 1954819
+[1] "iteration"
+[1] 233
+[1] "phi difference"
+[1] 9.056152e-05
+[1] "pi difference"
+[1] 0.0001940454
+[1] "negative loglikelihood"
+[1] 1954819
+[1] "iteration"
+[1] 234
+[1] "phi difference"
+[1] 8.941361e-05
+[1] "pi difference"
+[1] 0.0001926833
+[1] "negative loglikelihood"
+[1] 1954818
+[1] "iteration"
+[1] 235
+[1] "phi difference"
+[1] 8.821429e-05
+[1] "pi difference"
+[1] 0.0001913518
+[1] "negative loglikelihood"
+[1] 1954818
+[1] "iteration"
+[1] 236
+[1] "phi difference"
+[1] 8.701472e-05
+[1] "pi difference"
+[1] 0.000190048
+[1] "negative loglikelihood"
+[1] 1954817
+[1] "iteration"
+[1] 237
+[1] "phi difference"
+[1] 8.59069e-05
+[1] "pi difference"
+[1] 0.0001887428
+[1] "negative loglikelihood"
+[1] 1954817
+[1] "iteration"
+[1] 238
+[1] "phi difference"
+[1] 8.481656e-05
+[1] "pi difference"
+[1] 0.0001874377
+[1] "negative loglikelihood"
+[1] 1954817
+[1] "iteration"
+[1] 239
+[1] "phi difference"
+[1] 8.366829e-05
+[1] "pi difference"
+[1] 0.0001861446
+[1] "negative loglikelihood"
+[1] 1954816
+[1] "iteration"
+[1] 240
+[1] "phi difference"
+[1] 8.255455e-05
+[1] "pi difference"
+[1] 0.0001848892
+[1] "negative loglikelihood"
+[1] 1954816
+[1] "iteration"
+[1] 241
+[1] "phi difference"
+[1] 8.149492e-05
+[1] "pi difference"
+[1] 0.0001836418
+[1] "negative loglikelihood"
+[1] 1954815
+[1] "iteration"
+[1] 242
+[1] "phi difference"
+[1] 8.034905e-05
+[1] "pi difference"
+[1] 0.000182376
+[1] "negative loglikelihood"
+[1] 1954815
+[1] "iteration"
+[1] 243
+[1] "phi difference"
+[1] 7.932874e-05
+[1] "pi difference"
+[1] 0.0001811069
+[1] "negative loglikelihood"
+[1] 1954815
+[1] "iteration"
+[1] 244
+[1] "phi difference"
+[1] 7.832127e-05
+[1] "pi difference"
+[1] 0.0001798618
+[1] "negative loglikelihood"
+[1] 1954814
+[1] "iteration"
+[1] 245
+[1] "phi difference"
+[1] 7.731568e-05
+[1] "pi difference"
+[1] 0.0001786548
+[1] "negative loglikelihood"
+[1] 1954814
+[1] "iteration"
+[1] 246
+[1] "phi difference"
+[1] 7.631325e-05
+[1] "pi difference"
+[1] 0.0001774748
+[1] "negative loglikelihood"
+[1] 1954813
+[1] "iteration"
+[1] 247
+[1] "phi difference"
+[1] 7.53484e-05
+[1] "pi difference"
+[1] 0.0001763123
+[1] "negative loglikelihood"
+[1] 1954813
+[1] "iteration"
+[1] 248
+[1] "phi difference"
+[1] 7.43703e-05
+[1] "pi difference"
+[1] 0.000175181
+[1] "negative loglikelihood"
+[1] 1954812
+[1] "iteration"
+[1] 249
+[1] "phi difference"
+[1] 7.34016e-05
+[1] "pi difference"
+[1] 0.0001740711
+[1] "negative loglikelihood"
+[1] 1954812
+[1] "iteration"
+[1] 250
+[1] "phi difference"
+[1] 7.247547e-05
+[1] "pi difference"
+[1] 0.0001729571
+[1] "negative loglikelihood"
+[1] 1954812
+[1] "iteration"
+[1] 251
+[1] "phi difference"
+[1] 7.155897e-05
+[1] "pi difference"
+[1] 0.0001718512
+[1] "negative loglikelihood"
+[1] 1954811
+[1] "iteration"
+[1] 252
+[1] "phi difference"
+[1] 7.064607e-05
+[1] "pi difference"
+[1] 0.0001707349
+[1] "negative loglikelihood"
+[1] 1954811
+[1] "iteration"
+[1] 253
+[1] "phi difference"
+[1] 6.976409e-05
+[1] "pi difference"
+[1] 0.0001696086
+[1] "negative loglikelihood"
+[1] 1954811
+[1] "iteration"
+[1] 254
+[1] "phi difference"
+[1] 6.889585e-05
+[1] "pi difference"
+[1] 0.000168482
+[1] "negative loglikelihood"
+[1] 1954810
+[1] "iteration"
+[1] 255
+[1] "phi difference"
+[1] 6.803598e-05
+[1] "pi difference"
+[1] 0.0001673673
+[1] "negative loglikelihood"
+[1] 1954810
+[1] "iteration"
+[1] 256
+[1] "phi difference"
+[1] 6.728617e-05
+[1] "pi difference"
+[1] 0.0001662584
+[1] "negative loglikelihood"
+[1] 1954809
+[1] "iteration"
+[1] 257
+[1] "phi difference"
+[1] 6.682581e-05
+[1] "pi difference"
+[1] 0.0001651267
+[1] "negative loglikelihood"
+[1] 1954809
+[1] "iteration"
+[1] 258
+[1] "phi difference"
+[1] 6.659444e-05
+[1] "pi difference"
+[1] 0.0001640027
+[1] "negative loglikelihood"
+[1] 1954809
+[1] "iteration"
+[1] 259
+[1] "phi difference"
+[1] 6.624353e-05
+[1] "pi difference"
+[1] 0.0001628856
+[1] "negative loglikelihood"
+[1] 1954808
+[1] "iteration"
+[1] 260
+[1] "phi difference"
+[1] 6.583397e-05
+[1] "pi difference"
+[1] 0.0001617799
+[1] "negative loglikelihood"
+[1] 1954808
+[1] "iteration"
+[1] 261
+[1] "phi difference"
+[1] 6.543527e-05
+[1] "pi difference"
+[1] 0.0001606929
+[1] "negative loglikelihood"
+[1] 1954807
+[1] "iteration"
+[1] 262
+[1] "phi difference"
+[1] 6.504718e-05
+[1] "pi difference"
+[1] 0.0001596161
+[1] "negative loglikelihood"
+[1] 1954807
+[1] "iteration"
+[1] 263
+[1] "phi difference"
+[1] 6.475321e-05
+[1] "pi difference"
+[1] 0.0001585483
+[1] "negative loglikelihood"
+[1] 1954807
+[1] "iteration"
+[1] 264
+[1] "phi difference"
+[1] 6.43729e-05
+[1] "pi difference"
+[1] 0.0001574979
+[1] "negative loglikelihood"
+[1] 1954806
+[1] "iteration"
+[1] 265
+[1] "phi difference"
+[1] 6.421244e-05
+[1] "pi difference"
+[1] 0.0001564674
+[1] "negative loglikelihood"
+[1] 1954806
+[1] "iteration"
+[1] 266
+[1] "phi difference"
+[1] 6.398077e-05
+[1] "pi difference"
+[1] 0.0001554514
+[1] "negative loglikelihood"
+[1] 1954806
+[1] "iteration"
+[1] 267
+[1] "phi difference"
+[1] 6.364026e-05
+[1] "pi difference"
+[1] 0.0001544492
+[1] "negative loglikelihood"
+[1] 1954805
+[1] "iteration"
+[1] 268
+[1] "phi difference"
+[1] 6.330906e-05
+[1] "pi difference"
+[1] 0.0001534606
+[1] "negative loglikelihood"
+[1] 1954805
+[1] "iteration"
+[1] 269
+[1] "phi difference"
+[1] 6.296665e-05
+[1] "pi difference"
+[1] 0.0001524808
+[1] "negative loglikelihood"
+[1] 1954805
+[1] "iteration"
+[1] 270
+[1] "phi difference"
+[1] 6.263197e-05
+[1] "pi difference"
+[1] 0.0001515162
+[1] "negative loglikelihood"
+[1] 1954804
+[1] "iteration"
+[1] 271
+[1] "phi difference"
+[1] 6.236917e-05
+[1] "pi difference"
+[1] 0.0001505613
+[1] "negative loglikelihood"
+[1] 1954804
+[1] "iteration"
+[1] 272
+[1] "phi difference"
+[1] 6.207305e-05
+[1] "pi difference"
+[1] 0.0001496133
+[1] "negative loglikelihood"
+[1] 1954804
+[1] "iteration"
+[1] 273
+[1] "phi difference"
+[1] 6.187543e-05
+[1] "pi difference"
+[1] 0.0001486744
+[1] "negative loglikelihood"
+[1] 1954803
+[1] "iteration"
+[1] 274
+[1] "phi difference"
+[1] 6.174034e-05
+[1] "pi difference"
+[1] 0.0001477416
+[1] "negative loglikelihood"
+[1] 1954803
+[1] "iteration"
+[1] 275
+[1] "phi difference"
+[1] 6.160058e-05
+[1] "pi difference"
+[1] 0.0001468208
+[1] "negative loglikelihood"
+[1] 1954802
+[1] "iteration"
+[1] 276
+[1] "phi difference"
+[1] 6.119438e-05
+[1] "pi difference"
+[1] 0.0001459031
+[1] "negative loglikelihood"
+[1] 1954802
+[1] "iteration"
+[1] 277
+[1] "phi difference"
+[1] 6.099557e-05
+[1] "pi difference"
+[1] 0.0001449883
+[1] "negative loglikelihood"
+[1] 1954802
+[1] "iteration"
+[1] 278
+[1] "phi difference"
+[1] 6.082227e-05
+[1] "pi difference"
+[1] 0.0001440717
+[1] "negative loglikelihood"
+[1] 1954801
+[1] "iteration"
+[1] 279
+[1] "phi difference"
+[1] 6.057715e-05
+[1] "pi difference"
+[1] 0.0001431612
+[1] "negative loglikelihood"
+[1] 1954801
+[1] "iteration"
+[1] 280
+[1] "phi difference"
+[1] 6.033887e-05
+[1] "pi difference"
+[1] 0.0001422625
+[1] "negative loglikelihood"
+[1] 1954801
+[1] "iteration"
+[1] 281
+[1] "phi difference"
+[1] 6.010722e-05
+[1] "pi difference"
+[1] 0.0001413849
+[1] "negative loglikelihood"
+[1] 1954800
+[1] "iteration"
+[1] 282
+[1] "phi difference"
+[1] 5.988197e-05
+[1] "pi difference"
+[1] 0.0001405235
+[1] "negative loglikelihood"
+[1] 1954800
+[1] "iteration"
+[1] 283
+[1] "phi difference"
+[1] 5.965975e-05
+[1] "pi difference"
+[1] 0.0001396832
+[1] "negative loglikelihood"
+[1] 1954800
+[1] "iteration"
+[1] 284
+[1] "phi difference"
+[1] 5.94605e-05
+[1] "pi difference"
+[1] 0.0001388474
+[1] "negative loglikelihood"
+[1] 1954799
+[1] "iteration"
+[1] 285
+[1] "phi difference"
+[1] 5.935775e-05
+[1] "pi difference"
+[1] 0.000138023
+[1] "negative loglikelihood"
+[1] 1954799
+[1] "iteration"
+[1] 286
+[1] "phi difference"
+[1] 5.925747e-05
+[1] "pi difference"
+[1] 0.0001372029
+[1] "negative loglikelihood"
+[1] 1954799
+[1] "iteration"
+[1] 287
+[1] "phi difference"
+[1] 5.915965e-05
+[1] "pi difference"
+[1] 0.0001363894
+[1] "negative loglikelihood"
+[1] 1954799
+[1] "iteration"
+[1] 288
+[1] "phi difference"
+[1] 5.899627e-05
+[1] "pi difference"
+[1] 0.0001355919
+[1] "negative loglikelihood"
+[1] 1954798
+[1] "iteration"
+[1] 289
+[1] "phi difference"
+[1] 5.88062e-05
+[1] "pi difference"
+[1] 0.0001348007
+[1] "negative loglikelihood"
+[1] 1954798
+[1] "iteration"
+[1] 290
+[1] "phi difference"
+[1] 5.850237e-05
+[1] "pi difference"
+[1] 0.0001340224
+[1] "negative loglikelihood"
+[1] 1954798
+[1] "iteration"
+[1] 291
+[1] "phi difference"
+[1] 5.844603e-05
+[1] "pi difference"
+[1] 0.00013325
+[1] "negative loglikelihood"
+[1] 1954797
+[1] "iteration"
+[1] 292
+[1] "phi difference"
+[1] 5.827241e-05
+[1] "pi difference"
+[1] 0.0001324746
+[1] "negative loglikelihood"
+[1] 1954797
+[1] "iteration"
+[1] 293
+[1] "phi difference"
+[1] 5.810253e-05
+[1] "pi difference"
+[1] 0.0001317144
+[1] "negative loglikelihood"
+[1] 1954797
+[1] "iteration"
+[1] 294
+[1] "phi difference"
+[1] 5.793662e-05
+[1] "pi difference"
+[1] 0.0001309637
+[1] "negative loglikelihood"
+[1] 1954796
+[1] "iteration"
+[1] 295
+[1] "phi difference"
+[1] 5.77746e-05
+[1] "pi difference"
+[1] 0.0001302174
+[1] "negative loglikelihood"
+[1] 1954796
+[1] "iteration"
+[1] 296
+[1] "phi difference"
+[1] 5.767997e-05
+[1] "pi difference"
+[1] 0.0001294642
+[1] "negative loglikelihood"
+[1] 1954796
+[1] "iteration"
+[1] 297
+[1] "phi difference"
+[1] 5.746139e-05
+[1] "pi difference"
+[1] 0.0001287147
+[1] "negative loglikelihood"
+[1] 1954795
+[1] "iteration"
+[1] 298
+[1] "phi difference"
+[1] 5.730977e-05
+[1] "pi difference"
+[1] 0.0001279683
+[1] "negative loglikelihood"
+[1] 1954795
+[1] "iteration"
+[1] 299
+[1] "phi difference"
+[1] 5.719291e-05
+[1] "pi difference"
+[1] 0.0001272444
+[1] "negative loglikelihood"
+[1] 1954795
+[1] "iteration"
+[1] 300
+[1] "phi difference"
+[1] 5.713234e-05
+[1] "pi difference"
+[1] 0.0001265387
+[1] "negative loglikelihood"
+[1] 1954794
+[1] "iteration"
+[1] 301
+[1] "phi difference"
+[1] 5.707412e-05
+[1] "pi difference"
+[1] 0.0001258479
+[1] "negative loglikelihood"
+[1] 1954794
+[1] "iteration"
+[1] 302
+[1] "phi difference"
+[1] 5.701825e-05
+[1] "pi difference"
+[1] 0.0001251683
+[1] "negative loglikelihood"
+[1] 1954794
+[1] "iteration"
+[1] 303
+[1] "phi difference"
+[1] 5.687299e-05
+[1] "pi difference"
+[1] 0.0001244959
+[1] "negative loglikelihood"
+[1] 1954794
+[1] "iteration"
+[1] 304
+[1] "phi difference"
+[1] 5.677239e-05
+[1] "pi difference"
+[1] 0.0001238388
+[1] "negative loglikelihood"
+[1] 1954793
+[1] "iteration"
+[1] 305
+[1] "phi difference"
+[1] 5.663699e-05
+[1] "pi difference"
+[1] 0.0001231991
+[1] "negative loglikelihood"
+[1] 1954793
+[1] "iteration"
+[1] 306
+[1] "phi difference"
+[1] 5.65035e-05
+[1] "pi difference"
+[1] 0.0001225861
+[1] "negative loglikelihood"
+[1] 1954793
+[1] "iteration"
+[1] 307
+[1] "phi difference"
+[1] 5.637177e-05
+[1] "pi difference"
+[1] 0.0001219803
+[1] "negative loglikelihood"
+[1] 1954792
+[1] "iteration"
+[1] 308
+[1] "phi difference"
+[1] 5.630502e-05
+[1] "pi difference"
+[1] 0.0001213889
+[1] "negative loglikelihood"
+[1] 1954792
+[1] "iteration"
+[1] 309
+[1] "phi difference"
+[1] 5.611299e-05
+[1] "pi difference"
+[1] 0.0001208172
+[1] "negative loglikelihood"
+[1] 1954792
+[1] "iteration"
+[1] 310
+[1] "phi difference"
+[1] 5.598568e-05
+[1] "pi difference"
+[1] 0.000120256
+[1] "negative loglikelihood"
+[1] 1954791
+[1] "iteration"
+[1] 311
+[1] "phi difference"
+[1] 5.585953e-05
+[1] "pi difference"
+[1] 0.0001196994
+[1] "negative loglikelihood"
+[1] 1954791
+[1] "iteration"
+[1] 312
+[1] "phi difference"
+[1] 5.573401e-05
+[1] "pi difference"
+[1] 0.0001191402
+[1] "negative loglikelihood"
+[1] 1954791
+[1] "iteration"
+[1] 313
+[1] "phi difference"
+[1] 5.565862e-05
+[1] "pi difference"
+[1] 0.0001185771
+[1] "negative loglikelihood"
+[1] 1954791
+[1] "iteration"
+[1] 314
+[1] "phi difference"
+[1] 5.56953e-05
+[1] "pi difference"
+[1] 0.0001180187
+[1] "negative loglikelihood"
+[1] 1954790
+[1] "iteration"
+[1] 315
+[1] "phi difference"
+[1] 5.558077e-05
+[1] "pi difference"
+[1] 0.0001174722
+[1] "negative loglikelihood"
+[1] 1954790
+[1] "iteration"
+[1] 316
+[1] "phi difference"
+[1] 5.553677e-05
+[1] "pi difference"
+[1] 0.0001169298
+[1] "negative loglikelihood"
+[1] 1954790
+[1] "iteration"
+[1] 317
+[1] "phi difference"
+[1] 5.541389e-05
+[1] "pi difference"
+[1] 0.0001163908
+[1] "negative loglikelihood"
+[1] 1954789
+[1] "iteration"
+[1] 318
+[1] "phi difference"
+[1] 5.529164e-05
+[1] "pi difference"
+[1] 0.0001158606
+[1] "negative loglikelihood"
+[1] 1954789
+[1] "iteration"
+[1] 319
+[1] "phi difference"
+[1] 5.527431e-05
+[1] "pi difference"
+[1] 0.0001153365
+[1] "negative loglikelihood"
+[1] 1954789
+[1] "iteration"
+[1] 320
+[1] "phi difference"
+[1] 5.504828e-05
+[1] "pi difference"
+[1] 0.0001148101
+[1] "negative loglikelihood"
+[1] 1954788
+[1] "iteration"
+[1] 321
+[1] "phi difference"
+[1] 5.492706e-05
+[1] "pi difference"
+[1] 0.0001142854
+[1] "negative loglikelihood"
+[1] 1954788
+[1] "iteration"
+[1] 322
+[1] "phi difference"
+[1] 5.48061e-05
+[1] "pi difference"
+[1] 0.0001137663
+[1] "negative loglikelihood"
+[1] 1954788
+[1] "iteration"
+[1] 323
+[1] "phi difference"
+[1] 5.471028e-05
+[1] "pi difference"
+[1] 0.0001132402
+[1] "negative loglikelihood"
+[1] 1954788
+[1] "iteration"
+[1] 324
+[1] "phi difference"
+[1] 5.476288e-05
+[1] "pi difference"
+[1] 0.0001127058
+[1] "negative loglikelihood"
+[1] 1954787
+[1] "iteration"
+[1] 325
+[1] "phi difference"
+[1] 5.460799e-05
+[1] "pi difference"
+[1] 0.0001121707
+[1] "negative loglikelihood"
+[1] 1954787
+[1] "iteration"
+[1] 326
+[1] "phi difference"
+[1] 5.460529e-05
+[1] "pi difference"
+[1] 0.0001116411
+[1] "negative loglikelihood"
+[1] 1954787
+[1] "iteration"
+[1] 327
+[1] "phi difference"
+[1] 5.448406e-05
+[1] "pi difference"
+[1] 0.0001111062
+[1] "negative loglikelihood"
+[1] 1954786
+[1] "iteration"
+[1] 328
+[1] "phi difference"
+[1] 5.438248e-05
+[1] "pi difference"
+[1] 0.0001105704
+[1] "negative loglikelihood"
+[1] 1954786
+[1] "iteration"
+[1] 329
+[1] "phi difference"
+[1] 5.442776e-05
+[1] "pi difference"
+[1] 0.0001100361
+[1] "negative loglikelihood"
+[1] 1954786
+[1] "iteration"
+[1] 330
+[1] "phi difference"
+[1] 5.412165e-05
+[1] "pi difference"
+[1] 0.0001095042
+[1] "negative loglikelihood"
+[1] 1954786
+[1] "iteration"
+[1] 331
+[1] "phi difference"
+[1] 5.400142e-05
+[1] "pi difference"
+[1] 0.0001089765
+[1] "negative loglikelihood"
+[1] 1954785
+[1] "iteration"
+[1] 332
+[1] "phi difference"
+[1] 5.390302e-05
+[1] "pi difference"
+[1] 0.0001084522
+[1] "negative loglikelihood"
+[1] 1954785
+[1] "iteration"
+[1] 333
+[1] "phi difference"
+[1] 5.396634e-05
+[1] "pi difference"
+[1] 0.0001079257
+[1] "negative loglikelihood"
+[1] 1954785
+[1] "iteration"
+[1] 334
+[1] "phi difference"
+[1] 5.392095e-05
+[1] "pi difference"
+[1] 0.0001074036
+[1] "negative loglikelihood"
+[1] 1954784
+[1] "iteration"
+[1] 335
+[1] "phi difference"
+[1] 5.378738e-05
+[1] "pi difference"
+[1] 0.0001068882
+[1] "negative loglikelihood"
+[1] 1954784
+[1] "iteration"
+[1] 336
+[1] "phi difference"
+[1] 5.366705e-05
+[1] "pi difference"
+[1] 0.0001063812
+[1] "negative loglikelihood"
+[1] 1954784
+[1] "iteration"
+[1] 337
+[1] "phi difference"
+[1] 5.366431e-05
+[1] "pi difference"
+[1] 0.0001058797
+[1] "negative loglikelihood"
+[1] 1954784
+[1] "iteration"
+[1] 338
+[1] "phi difference"
+[1] 5.363121e-05
+[1] "pi difference"
+[1] 0.0001053863
+[1] "negative loglikelihood"
+[1] 1954783
+[1] "iteration"
+[1] 339
+[1] "phi difference"
+[1] 5.331155e-05
+[1] "pi difference"
+[1] 0.0001048983
+[1] "negative loglikelihood"
+[1] 1954783
+[1] "iteration"
+[1] 340
+[1] "phi difference"
+[1] 5.332633e-05
+[1] "pi difference"
+[1] 0.0001044118
+[1] "negative loglikelihood"
+[1] 1954783
+[1] "iteration"
+[1] 341
+[1] "phi difference"
+[1] 5.340804e-05
+[1] "pi difference"
+[1] 0.0001039292
+[1] "negative loglikelihood"
+[1] 1954782
+[1] "iteration"
+[1] 342
+[1] "phi difference"
+[1] 5.344703e-05
+[1] "pi difference"
+[1] 0.0001034505
+[1] "negative loglikelihood"
+[1] 1954782
+[1] "iteration"
+[1] 343
+[1] "phi difference"
+[1] 5.311432e-05
+[1] "pi difference"
+[1] 0.0001029783
+[1] "negative loglikelihood"
+[1] 1954782
+[1] "iteration"
+[1] 344
+[1] "phi difference"
+[1] 5.300183e-05
+[1] "pi difference"
+[1] 0.0001025078
+[1] "negative loglikelihood"
+[1] 1954782
+[1] "iteration"
+[1] 345
+[1] "phi difference"
+[1] 5.308329e-05
+[1] "pi difference"
+[1] 0.0001020442
+[1] "negative loglikelihood"
+[1] 1954781
+[1] "iteration"
+[1] 346
+[1] "phi difference"
+[1] 5.304007e-05
+[1] "pi difference"
+[1] 0.0001015854
+[1] "negative loglikelihood"
+[1] 1954781
+[1] "iteration"
+[1] 347
+[1] "phi difference"
+[1] 5.293131e-05
+[1] "pi difference"
+[1] 0.000101133
+[1] "negative loglikelihood"
+[1] 1954781
+[1] "iteration"
+[1] 348
+[1] "phi difference"
+[1] 5.284349e-05
+[1] "pi difference"
+[1] 0.0001006847
+[1] "negative loglikelihood"
+[1] 1954780
+[1] "iteration"
+[1] 349
+[1] "phi difference"
+[1] 5.294977e-05
+[1] "pi difference"
+[1] 0.0001002401
+[1] "negative loglikelihood"
+[1] 1954780
+[1] "iteration"
+[1] 350
+[1] "phi difference"
+[1] 5.287189e-05
+[1] "pi difference"
+[1] 9.97872e-05
+[1] "negative loglikelihood"
+[1] 1954780
