@@ -40,11 +40,6 @@ EMupd.mix=function(y,smooth,pi,phi,n,K,B){
     lambda[is.na(lambda)]=lambda.unsmoothed[is.na(lambda)]
     phi=lambda/lscale
   }
-  
-  plot(NA,xlim=c(0,2048),ylim=c(0,0.01))
-  lines(phi[1,])
-  lines(phi[2,])
-  lines(phi[3,])
 
   
   return(list(pi=pi,phi=phi,phi.unsmoothed=phi.unsmoothed,lambda=lambda,gamma=gamma))
