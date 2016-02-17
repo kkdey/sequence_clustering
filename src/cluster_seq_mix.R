@@ -150,5 +150,5 @@ cluster.mix=function(y,smooth=TRUE,pi0=NULL,phi0=NULL,K,tol,maxit){
   }
 
   out=EMproc.mix(y,smooth,pi0,phi0,n,K,B,tol,maxit)
-  return(list(pi=out$pi,phi=out$phi,lambda=out$lambda,lambda=out$lambda,gamma=out$gamma,loglik=out$loglik))
+  return(list(pi=out$pi,phi=out$phi,lambda=out$lambda,gamma=out$gamma,loglik=out$loglik))
 }
