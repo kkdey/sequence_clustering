@@ -1,0 +1,123 @@
+---
+title: "oas1 - further analyses"
+output: html_document
+---
+
+We first look at the structure plot
+
+
+```{r}
+library(gplots)
+library(smash)
+path = "D:/Grad School/projects/sequence_clustering"
+setwd(path)
+load("results/analysis_oas1/test_initial_nosmooth.RData")
+res_nosmooth = res
+load("results/analysis_oas1/test_initial_smooth.RData")
+res_smooth = res
+load(paste0(path, "/data/oas1/OAS1.Robj"))
+```
+
+
+```{r}
+K = dim(res_nosmooth$pi)[2]
+nosmooth_pi_unordered = res_nosmooth$pi
+ordering = order(Robj$g)
+nosmooth_pi_ordered = nosmooth_pi_unordered[ordering, ]
+smooth_pi_unordered = res_smooth$pi
+smooth_pi_ordered = smooth_pi_unordered[ordering, ]
+sep_lines = cumsum(table(Robj$g))[1:(K - 1)]
+
+par(mfrow = c(2, 1), mar=c(2, 2, 2, 2), oma = c(4, 4, 0.2, 0.2))
+barplot(t(nosmooth_pi_ordered), col = 2:(K + 1), axisnames = F, space = 0, border = NA, main = "structure plot for unsmoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+barplot(t(smooth_pi_ordered), col = c(3, 2, 4:(K + 1)), axisnames = F, space = 0, border = NA, main = "structure plot for smoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+```
+
+
+Now we take a look at the heatmap for genotypes 1 and 2. First heatmap shows correlation for raw reads, second shows correlation for admixture proportions using the model with no smoothing, and the third shows correlation for admixture proportions using the model with smoothing.
+
+```{r}
+data_subset = data[Robj$g!=0, ]
+g_subset = Robj$g[Robj$g != 0]
+
+col = c(rgb(seq(0, 1, length = 15), 1, seq(0, 1, length = 15)), rgb(1, seq(1, 0 ,length = 15), seq(1, 0, length = 15)))
+
+heatmap.2(cor(t(data_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+
+nosmooth_subset = res_nosmooth$pi[Robj$g!=0, ]
+
+hm_nosmooth_12 = heatmap.2(cor(t(nosmooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+smooth_subset = res_smooth$pi[Robj$g!=0, ]
+
+heatmap.2(cor(t(smooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+```
+
+As we can see there isn't a lot of structure using raw reads. However, the unsmoothed model shows some strong anticorrelation between certain samples, which is weird considering the similarities between samples in genotype classes 1 and 2. On the other hand, the model with smoothing shows that while all the samples in either genotype class are perfectly correlated with those in the sample genotype class, samples between genotype classes are also very similar.
+
+Now we draw the same heatmaps, but for genotypes 0 and 2.
+
+```{r}
+data_subset = data[Robj$g!=1, ]
+g_subset = Robj$g[Robj$g != 1]
+
+col = c(rgb(seq(0, 1, length = 15), 1, seq(0, 1, length = 15)), rgb(1, seq(1, 0 ,length = 15), seq(1, 0, length = 15)))
+
+heatmap.2(cor(t(data_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+
+nosmooth_subset = res_nosmooth$pi[Robj$g!=1, ]
+
+hm_nosmooth_02 = heatmap.2(cor(t(nosmooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+smooth_subset = res_smooth$pi[Robj$g!=1, ]
+
+heatmap.2(cor(t(smooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+```
+
+While raw reads again reveal little, the model with no smoothing shows anticorrelation between samples from the two different genotype classes, and also shows anticorrelation between certain samples in genotype class 2. On the other hand, the model with smoothing shows perfect correlation between samples in the same genotype class, and good anticorrelation between samples from different genotype classes.
+
+
+We look at an example where two samples from genotype class 1 have very different correlations in the smoothed vs the unsmoothed model.
+
+```{r}
+data_subset = data[Robj$g!=0, ]
+g_subset = Robj$g[Robj$g != 0]
+nosmooth_subset = res_nosmooth$pi[Robj$g!=0, ]
+smooth_subset = res_smooth$pi[Robj$g!=0, ]
+
+#5 & 26, both from genotype 1
+par(mfrow = c(1, 1))
+plot(ashsmooth.pois(data_subset[5, ]), type = 'l')
+lines(ashsmooth.pois(data_subset[26, ]), col = 2)
+
+cor(t(data_subset), method = "pearson")[5, 26]
+cor(t(nosmooth_subset), method = "pearson")[5, 26]
+cor(t(smooth_subset), method = "pearson")[5, 26]
+
+```
+
+
+And now the same for genotype class 2
+
+
+```{r}
+data_subset = data[Robj$g!=1, ]
+g_subset = Robj$g[Robj$g != 1]
+nosmooth_subset = res_nosmooth$pi[Robj$g!=1, ]
+smooth_subset = res_smooth$pi[Robj$g!=1, ]
+
+#9 & 23
+par(mfrow = c(1, 1))
+plot(ashsmooth.pois(data_subset[9, ]), type = 'l')
+lines(ashsmooth.pois(data_subset[23, ]), col = 2)
+
+cor(t(data_subset), method = "pearson")[9, 23]
+cor(t(nosmooth_subset), method = "pearson")[9, 23]
+cor(t(smooth_subset), method = "pearson")[9, 23]
+```

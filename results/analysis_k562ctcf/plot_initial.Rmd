@@ -1,0 +1,18 @@
+---
+title: "Initial results from running clustering method on k562ctcf data"
+output: html_document
+---
+
+
+```{r}
+path = "D:/Grad School/projects/sequence_clustering"
+setwd(path)
+load(paste0(path, "/results/analysis_k562ctcf/sample.data.res.RData"))
+```
+
+
+```{r}
+for(i in 1:dim(sample.res.smooth$phi)[1]){
+  plot(sample.res.smooth$phi[i, ], main = paste('cluster', i))
+}
+```
