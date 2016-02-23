@@ -8,9 +8,9 @@ We run the clustering method on part of the OAS1 gene and look at the results.
 ```{r}
 path = "D:/Grad School/projects/sequence_clustering"
 setwd(path)
-load("results/analysis_oas1/test_initial_nosmooth.RData")
+load("results/analysis_oas1/res_nosmooth_3.RData")
 res_nosmooth = res
-load("results/analysis_oas1/test_initial_smooth.RData")
+load("results/analysis_oas1/res_smooth_3.RData")
 res_smooth = res
 ```
 
