@@ -1,0 +1,67 @@
+---
+title: "Results from running with K = 2 clusters"
+output: html_document
+---
+
+
+We run the clustering method on part of the OAS1 gene and look at the results.
+
+```{r}
+path = "D:/Grad School/projects/sequence_clustering"
+setwd(path)
+load("results/analysis_oas1/res_nosmooth_2.RData")
+res_nosmooth = res
+load("results/analysis_oas1/res_smooth_2.RData")
+res_smooth = res
+```
+
+
+We first plot what the unsmoothed and the smoothed clusters look like
+```{r}
+#plot the clusters
+par(mfrow = c(2, 1))
+plot(res_nosmooth$phi[1, ], col = 2, ylim = c(0, 0.015), type = 'l', main = "unsmoothed clusters")
+lines(res_nosmooth$phi[2, ], col = 3)
+plot(res_smooth$phi[1, ], col = 2, ylim = c(0, 0.015), type = 'l', main = "smoothed clusters")
+lines(res_smooth$phi[2, ], col = 3)
+```
+
+
+```{r}
+load(paste0(path, "/data/oas1/OAS1.Robj"))
+comp_nosmooth = cbind(res_nosmooth$pi, Robj$g)
+
+#compare the actual genotype with the estimated profile
+est_nosmooth = res_nosmooth$pi %*% res_nosmooth$lambda
+est_smooth = res_smooth$pi %*% res_smooth$lambda
+```
+
+We then choose three examples, one from each genotype class, and look at what the reconstructed signal looks like based on the clusters.
+
+```{r}
+#look at example profiles belonging to different genotype classes
+par(mfrow = c(2, 1))
+plot(est_nosmooth[48, ], ylim = c(0, 10), type = 'l', main = "estimated signals, unsmoothed")
+lines(est_nosmooth[17, ], col = 2)
+lines(est_nosmooth[3, ], col = 3)
+plot(est_smooth[48, ], ylim = c(0, 10), type = 'l', main = "estimated signals with smoothing procedures")
+lines(est_smooth[17, ], col = 2)
+lines(est_smooth[3, ], col = 3)
+```
+
+And finally, smooth the unsmoothed signals post hoc and add in signals estimated from the original data
+
+```{r}
+#smooth unsmoothed profiles post-hoc
+library(smash)
+par(mfrow = c(3, 1))
+plot(ashsmooth.pois(data[48, 2049:4096], log = FALSE), ylim = c(0, 7), type = 'l', main = "original data, smoothed post hoc")
+lines(ashsmooth.pois(data[17, 2049:4096], log = FALSE), col = 2)
+lines(ashsmooth.pois(data[3, 2049:4096], log = FALSE), col = 3)
+plot(ashsmooth.pois(est_nosmooth[48, ], log = FALSE), ylim = c(0, 7), type = 'l', main = "estimated signals, smoothed post hoc")
+lines(ashsmooth.pois(est_nosmooth[17, ], log = FALSE), col = 2)
+lines(ashsmooth.pois(est_nosmooth[3, ], log = FALSE), col = 3)
+plot(est_smooth[48, ], ylim = c(0, 7), type = 'l', main = "estimated signals with smoothing procedure")
+lines(est_smooth[17, ], col = 2)
+lines(est_smooth[3, ], col = 3)
+```

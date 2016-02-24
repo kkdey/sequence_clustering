@@ -1,0 +1,105 @@
+---
+title: Structure plots and heat maps comparing smoothing prior to clustering and smoothing
+  during clustering
+output: html_document
+---
+
+We first look at the structure plots for the two approaches
+
+```{r}
+library(gplots)
+library(smash)
+path = "D:/Grad School/projects/sequence_clustering"
+setwd(path)
+load("results/analysis_oas1/res_initial_smooth_3.RData")
+res_priorsmooth = res
+load("results/analysis_oas1/res_smooth_3.RData")
+res_smooth = res
+load(paste0(path, "/data/oas1/OAS1.Robj"))
+```
+
+
+```{r}
+K = dim(res_priorsmooth$pi)[2]
+priorsmooth_pi_unordered = res_priorsmooth$pi
+ordering = order(Robj$g)
+priorsmooth_pi_ordered = priorsmooth_pi_unordered[ordering, ]
+smooth_pi_unordered = res_smooth$pi
+smooth_pi_ordered = smooth_pi_unordered[ordering, ]
+sep_lines = cumsum(table(Robj$g))[1:2]
+
+par(mfrow = c(2, 1), mar=c(2, 2, 2, 2), oma = c(4, 4, 0.2, 0.2))
+barplot(t(priorsmooth_pi_ordered), col = 2:(K + 1), axisnames = F, space = 0, border = NA, main = "structure plot for unsmoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+barplot(t(smooth_pi_ordered), col = c(3, 2, 4:(K + 1)), axisnames = F, space = 0, border = NA, main = "structure plot for smoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+```
+
+
+Now we take a look at the heatmap for genotypes 1 and 2. First heatmap shows correlation for raw reads, second shows correlation for admixture proportions using the model with no smoothing, and the third shows correlation for admixture proportions using the model with smoothing.
+
+```{r}
+data_subset = data[Robj$g!=0, 2049:4096]
+g_subset = Robj$g[Robj$g != 0]
+
+col = c(rgb(seq(0, 1, length = 15), 1, seq(0, 1, length = 15)), rgb(1, seq(1, 0 ,length = 15), seq(1, 0, length = 15)))
+
+heatmap.2(cor(t(data_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+
+priorsmooth_subset = res_priorsmooth$pi[Robj$g!=0, ]
+
+hm_priorsmooth_12 = heatmap.2(cor(t(priorsmooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+smooth_subset = res_smooth$pi[Robj$g!=0, ]
+
+heatmap.2(cor(t(smooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+```
+
+
+Now we draw the same heatmaps, but for genotypes 0 and 2.
+
+```{r}
+data_subset = data[Robj$g!=1, 2049:4096]
+g_subset = Robj$g[Robj$g != 1]
+
+col = c(rgb(seq(0, 1, length = 15), 1, seq(0, 1, length = 15)), rgb(1, seq(1, 0 ,length = 15), seq(1, 0, length = 15)))
+
+heatmap.2(cor(t(data_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+
+priorsmooth_subset = res_priorsmooth$pi[Robj$g!=1, ]
+
+hm_priorsmooth_02 = heatmap.2(cor(t(priorsmooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+smooth_subset = res_smooth$pi[Robj$g!=1, ]
+
+hm_smooth_02 = heatmap.2(cor(t(smooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+```
+
+
+
+Finally, for genotypes 0 and 1
+
+```{r}
+data_subset = data[Robj$g!=2, 2049:4096]
+g_subset = Robj$g[Robj$g != 2]
+
+col = c(rgb(seq(0, 1, length = 15), 1, seq(0, 1, length = 15)), rgb(1, seq(1, 0 ,length = 15), seq(1, 0, length = 15)))
+
+heatmap.2(cor(t(data_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+
+priorsmooth_subset = res_priorsmooth$pi[Robj$g!=2, ]
+
+hm_priorsmooth_01 = heatmap.2(cor(t(priorsmooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+smooth_subset = res_smooth$pi[Robj$g!=2, ]
+
+hm_smooth_01 = heatmap.2(cor(t(smooth_subset), method = "pearson"), labCol = g_subset, labRow = g_subset, scale = "none", trace = "none", distfun = function(x) dist(x, method = "euclidean"), col = col, hclustfun = function(x) hclust(x,method="average"), breaks = c(seq(-1, 0, 0.1), seq(0.05, 1, length.out = 20)))
+
+```
+
+In general, it appears that smoothing prior to clustering doesn't really change much - smoothing during the clustering stage will help a lot more in helping to differentiate between the different genotype classes and the underlying biological clusters.

@@ -1,0 +1,68 @@
+---
+title: "Results comparing smoothing first and smoothing during the clustering procedure"
+output: html_document
+---
+
+We compare two different approaches: the original incorporates the smoothing as part of the clustering algorithm, while the alternative smoothes the data first and then performs clustering.
+
+```{r}
+path = "D:/Grad School/projects/sequence_clustering"
+setwd(path)
+load("results/analysis_oas1/res_initial_smooth_3.RData")
+res_priorsmooth = res
+load("results/analysis_oas1/res_smooth_3.RData")
+res_smooth = res
+```
+
+
+We first plot what the clusters from the two approaches look like
+```{r}
+#plot the clusters
+par(mfrow = c(2, 1))
+plot(res_priorsmooth$phi[1, ], col = 2, ylim = c(0, 0.015), type = 'l', main = "unsmoothed clusters")
+lines(res_priorsmooth$phi[2, ], col = 3)
+lines(res_priorsmooth$phi[3, ], col = 4)
+plot(res_smooth$phi[1, ], col = 3, ylim = c(0, 0.015), type = 'l', main = "smoothed clusters")
+lines(res_smooth$phi[2, ], col = 2)
+lines(res_smooth$phi[3, ], col = 4)
+```
+
+
+```{r}
+load(paste0(path, "/data/oas1/OAS1.Robj"))
+comp_priorsmooth = cbind(res_priorsmooth$pi, Robj$g)
+
+#compare the actual genotype with the estimated profile
+est_priorsmooth = res_priorsmooth$pi %*% res_priorsmooth$lambda
+est_smooth = res_smooth$pi %*% res_smooth$lambda
+```
+
+We then choose three examples, one from each genotype class, and look at what the reconstructed signal looks like based on the clusters.
+
+```{r}
+#look at example profiles belonging to different genotype classes
+par(mfrow = c(2, 1))
+plot(est_priorsmooth[48, ], ylim = c(0, 10), type = 'l', main = "estimated signals, unsmoothed")
+lines(est_priorsmooth[17, ], col = 2)
+lines(est_priorsmooth[3, ], col = 3)
+plot(est_smooth[48, ], ylim = c(0, 10), type = 'l', main = "estimated signals with smoothing procedures")
+lines(est_smooth[17, ], col = 2)
+lines(est_smooth[3, ], col = 3)
+```
+
+And finally, smooth the unsmoothed signals post hoc and add in signals estimated from the original data
+
+```{r}
+#smooth unsmoothed profiles post-hoc
+library(smash)
+par(mfrow = c(3, 1))
+plot(ashsmooth.pois(data[48, 2049:4096], log = FALSE), ylim = c(0, 7), type = 'l', main = "original data, smoothed post hoc")
+lines(ashsmooth.pois(data[17, 2049:4096], log = FALSE), col = 2)
+lines(ashsmooth.pois(data[3, 2049:4096], log = FALSE), col = 3)
+plot(est_priorsmooth[48, ], ylim = c(0, 7), type = 'l', main = "estimated signals, smoothed prior to clustering")
+lines(est_priorsmooth[17, ], col = 2)
+lines(est_priorsmooth[3, ], col = 3)
+plot(est_smooth[48, ], ylim = c(0, 7), type = 'l', main = "estimated signals with smoothing procedure")
+lines(est_smooth[17, ], col = 2)
+lines(est_smooth[3, ], col = 3)
+```

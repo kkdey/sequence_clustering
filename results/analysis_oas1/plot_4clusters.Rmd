@@ -3,10 +3,7 @@ title: "Results from running with K = 4 clusters"
 output: html_document
 ---
 
----
-title: "Initial results from running the clustering method on OAS1 data"
-output: html_document
----
+
 
 We run the clustering method on part of the OAS1 gene and look at the results.
 
@@ -25,9 +22,9 @@ We first plot what the unsmoothed and the smoothed clusters look like
 #plot the clusters
 par(mfrow = c(2, 1))
 plot(res_nosmooth$phi[1, ], col = 2, ylim = c(0, 0.015), type = 'l', main = "unsmoothed clusters")
-lines(res_nosmooth$phi[2, ], col = 3)
+lines(res_nosmooth$phi[2, ], col = 5)
 lines(res_nosmooth$phi[3, ], col = 4)
-lines(res_nosmooth$phi[4, ], col = 5)
+lines(res_nosmooth$phi[4, ], col = 3)
 plot(res_smooth$phi[1, ], col = 3, ylim = c(0, 0.015), type = 'l', main = "smoothed clusters")
 lines(res_smooth$phi[2, ], col = 2)
 lines(res_smooth$phi[3, ], col = 4)
