@@ -1,0 +1,80 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,fullpage,verbatim,bm,graphicx,enumerate,epstopdf,lscape}
+
+\usepackage[dvipsnames,usenames]{color}
+\usepackage[pdftex,pagebackref,letterpaper=true,colorlinks=true,pdfpagemode=none,urlcolor=blue,linkcolor=blue,citecolor=BrickRed,pdfstartview=FitH,plainpages=true]{hyperref}
+\usepackage[top=1.4in,bottom=1.3in,left=1in,right=1in]{geometry}
+
+
+
+\def\CC{\mathbb{C}}
+\def\RR{\mathbb{R}}
+\def\ZZ{\mathbb{Z}}
+\def\PP{\mathbb{P}}
+\def\EE{\mathbb{E}}
+\def\II{\mathbb{I}}
+
+
+\newcommand{\Ga}{\alpha}
+\newcommand{\Gb}{\beta}
+\newcommand{\Gg}{\gamma}     \newcommand{\GG}{\Gamma}
+\newcommand{\Gd}{\delta}     \newcommand{\GD}{\Delta}
+\newcommand{\Ge}{\epsilon}
+\newcommand{\Gf}{\phi}       \newcommand{\GF}{\Phi}
+\newcommand{\Gh}{\theta}
+\newcommand{\Gi}{\iota}
+\newcommand{\Gk}{\kappa}
+\newcommand{\Gl}{\lambda}    \newcommand{\GL}{\Lambda}
+\newcommand{\Go}{\omega}     \newcommand{\GO}{\Omega}
+\newcommand{\Gs}{\sigma}     \newcommand{\GS}{\Sigma}
+\newcommand{\Gt}{\tau}
+\newcommand{\Gz}{\zeta}
+\newcommand{\s}{\sigma}
+\newcommand{\tr}{\triangle}
+
+
+\begin{document}
+
+\title{\textbf{Clustering of high-throughput sequencing data}}
+\date{}
+\maketitle
+
+
+\section{Introduction}
+Clustering techniques have often been used in the analysis of genetic data as a powerful exploratory tool. In particular, the STRUCTURE model \cite{pritchard.stephens.donnelly} (as known as the admixture/grade-of-membership/latent Dirichlet allocation models) was proposed as a ``soft'' clustering method for genotype data to infer population structure. Other clustering tools such as $k$-means and hierarchical clustering have also been used in the analysis of micro-array data, to cluster both genes and samples (\cite{}), as well as sequencing data (\cite{}). More recently the same admixture model was proposed by \cite{kushal.hsiao.stephens} to cluster samples from RNA-seq data, motivated by the argument that each sample could be a mixture of different cell types, so that the membership profile of the sample would indicate the proportions of cell types present.
+
+Motivated by the results from the admixture models in both \cite{pritchard.stephens.donnelly} and \cite{kushal.hsiao.stephens}, we propose an extension of the sample model to analyze sequencing data at the base pair resolution (RNA-seq reads were summed up within each gene in \cite{kushal.hsiao.stephens}). The goal of such a model is to capture clusters at a finer scale compared to gene-level analysis. For example, certain samples might share similar expression patterns for a portion of a gene, but reveal different patterns in another portion of the same gene. One possible explanation for this might be variations in splicing patterns, and new clusters could potentially reveal transcripts not previously found.
+
+Due to the typically small number of counts when analyzing sequencing data at the base pair resolution, certain assumptions are often required for any given model. Here we make the ``smoothness'' assumption (\cite{heejung.stepehens}, \cite{heejung.xing.stephens}, \cite{xing.stephens}), and add an additional ``smoothing'' step when fitting the admixture model. As we will show, this additional step greatly increases the accuracy of the model when compared to the standard admixture model.
+
+\section{Method}
+We first describe the basic model (without smoothing) for sequencing data in the context of topic models for easier conceptual understanding. We first assume that there is a number of underlying (normalized) intensity profiles (eg expression profiles in the context of RNA-seq), which are the latent ``topics'', or clusters. Each profile determines the distribution of the read counts (ie the mean at each base pair is the probability that a DNA fragment (which we assume to be of length 1 for simplicity) maps to that base). This is essentially the ``vocabulary matrix'' in a topic model, where each base pair is a ``word''. Given the cluster profiles, the generative model can be specified as 
+\begin{enumerate}
+\item For the $j$-th DNA fragment (of length 1) in sample $i$, first choose cluster $Z_{ij}$ according to $P(Z_{ij}=k|\bm{\pi})=\pi_{ik}$, where $\sum_k\pi_{ik}=1$.
+\item Given $Z_{ij}$, choose the base $R_{ij}$ it maps to according to $P(R_{ij}=b|Z_{ij},\bm{\phi})=\phi_{Z_{ij},b}$, where $\sum_b\phi_{kb}=1$.
+\end{enumerate}
+Given this generative model, the likelihood $P(D|\bm{\phi},\bm{\pi})$ is given by
+\begin{eqnarray}
+P(D|\bm{\phi},\bm{\pi})&=&\prod_i\prod_j\sum_k P(R_{ij}|Z_{ij}=k,\bm{\phi})P(Z_{ij}=k|\bm{\pi}) \notag\\
+&=&\prod_i\prod_b\left(\sum_k P(R_{ij}=b|Z_{ij}=k,\bm{\phi})P(Z_{ij}=k|\bm{\pi})\right)^{Y_{ib}} \hspace{0.3in} \mbox{where $Y_{ib}=\sum_j I_{\{R_{ij}=b\}}$} \notag\\
+&=&\prod_i\prod_b\left(\sum_k \pi_{ik}\phi_{kb}\right)^{Y_ib}\\
+\end{eqnarray}
+Note that we have re-expressed the data using the sum of the reads at a given base pair instead of the read position themselves, as this is the actual input data that we have. We use the EM algorithm to estimate the parameters $\bm{\pi}$ and $\bm{\phi}$, resulting in the updates
+\begin{eqnarray}\label{eq:em_update}
+&\pi_{ik}^{(t)}=\frac{\sum_b Y_{ib}\left(\frac{\pi_{ik}^{(t-1)}\phi_{kb}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}\phi_{k'b}^{(t-1)}}\right)}{\sum_{b'}Y_{ib'}}\\
+&\phi_{kb}^{(t)}=\frac{\sum_i Y_{ib}\left(\frac{\pi_{ik}^{(t-1)}\phi_{kb}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}\phi_{k'b}^{(t-1)}}\right)}{\sum_i\sum_{b'} Y_{ib'}\left(\frac{\pi_{ik}^{(t-1)}\phi_{kb'}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}\phi_{k'b'}^{(t-1)}}\right)}
+\end{eqnarray}
+, which is iterated until convergence.
+However, we found (see ??) that the standard admixture model does not perform well when applied directly to sequencing data. The low (possibly 0) counts are problematic when trying to estimate the parameters, so we perform an additional ``regularization'' step during the each update \ref{eq:em_update} through the usage of a smoothing procedure designed specifically to smooth Poisson data, SMASH. Hence, the updates in the regularized model is given by
+\begin{eqnarray}\label{eq:em_update_reg}
+&{\pi}_{ik}^{(t)}=\frac{\sum_b Y_{ib}\left(\frac{\pi_{ik}^{(t-1)}{\phi}_{kb}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}{\phi}_{k'b}^{(t-1)}}\right)}{\sum_{b'}Y_{ib'}}\\
+&{\phi}_{kb}^{(t)}=f\left(\frac{\sum_i Y_{ib}\left(\frac{\pi_{ik}^{(t-1)}{\phi}_{kb}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}{\phi}_{k'b}^{(t-1)}}\right)}{\sum_i\sum_{b'} Y_{ib'}\left(\frac{\pi_{ik}^{(t-1)}{\phi}_{kb'}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}{\phi}_{k'b'}^{(t-1)}}\right)}\right)
+\end{eqnarray}
+Specifically, the function $f$ consists of the following steps:
+\begin{enumerate}
+\item Rescale the term inside $f$, which we call $\phi_{kb}^o$, to approximately the original scale.
+\item Apply SMASH to the rescaled $\phi_{kb}^o$ for each $k$, resulting in ${\phi}_{kb}$.
+\item Scale ${\phi}_{kb}$ back so that $\sum_b{\phi}_{kb}=1$. 
+\end{enumerate}
+The rationale for the scaling is because SMASH is designed to smooth Poisson data, and we can think of the $\phi_{kb}$'s as a ``noisy'' version of the of the ``true'' $\phi_{kb}$'s, so that scaling them gives rise to estimates that resemble a ``Poisson'' process. We then return the final smoothed $\bm{\phi}$'s as well as the $\bm{\pi}$'s as the parameter estimates.
+\end{document}
