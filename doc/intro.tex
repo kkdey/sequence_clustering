@@ -59,7 +59,7 @@ P(D|\bm{\phi},\bm{\pi})&=&\prod_i\prod_j\sum_k P(R_{ij}|Z_{ij}=k,\bm{\phi})P(Z_{
 &=&\prod_i\prod_b\left(\sum_k P(R_{ij}=b|Z_{ij}=k,\bm{\phi})P(Z_{ij}=k|\bm{\pi})\right)^{Y_{ib}} \hspace{0.3in} \mbox{where $Y_{ib}=\sum_j I_{\{R_{ij}=b\}}$} \notag\\
 &=&\prod_i\prod_b\left(\sum_k \pi_{ik}\phi_{kb}\right)^{Y_ib}\\
 \end{eqnarray}
-Note that we have re-expressed the data using the sum of the reads at a given base pair instead of the read position themselves, as this is the actual input data that we have. We use the EM algorithm to estimate the parameters $\bm{\pi}$ and $\bm{\phi}$, resulting in the updates
+Note that we have re-expressed the data using the sum of the reads at a given base pair instead of the read position themselves, as this is the actual input data that we have. The parameters $\bm{\pi}$ and $\bm{\phi}$ are estimated using an EM algorithm, resulting in the updates
 \begin{eqnarray}\label{eq:em_update}
 &\pi_{ik}^{(t)}=\frac{\sum_b Y_{ib}\left(\frac{\pi_{ik}^{(t-1)}\phi_{kb}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}\phi_{k'b}^{(t-1)}}\right)}{\sum_{b'}Y_{ib'}}\\
 &\phi_{kb}^{(t)}=\frac{\sum_i Y_{ib}\left(\frac{\pi_{ik}^{(t-1)}\phi_{kb}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}\phi_{k'b}^{(t-1)}}\right)}{\sum_i\sum_{b'} Y_{ib'}\left(\frac{\pi_{ik}^{(t-1)}\phi_{kb'}^{(t-1)}}{\sum_{k'}\pi_{ik'}^{(t-1)}\phi_{k'b'}^{(t-1)}}\right)}
@@ -72,7 +72,7 @@ However, we found (see ??) that the standard admixture model does not perform we
 \end{eqnarray}
 Specifically, the function $f$ consists of the following steps:
 \begin{enumerate}
-\item Rescale the term inside $f$, which we call $\phi_{kb}^o$, to approximately the original scale.
+\item Rescale the term inside $f$, which we call $\phi_{kb}^o$, to approximately the data scale (note that the $\phi_{kb}^o$'s were defined to be multinomial probabilities, hence between 0 and 1).
 \item Apply SMASH to the rescaled $\phi_{kb}^o$ for each $k$, resulting in ${\phi}_{kb}$.
 \item Scale ${\phi}_{kb}$ back so that $\sum_b{\phi}_{kb}=1$. 
 \end{enumerate}

@@ -1,0 +1,58 @@
+---
+title: "Simulation-identifiability"
+output: html_document
+---
+
+This is to try out what the clustering method (both smoothed and unsmoothed) produces when presented with samples that had varying degrees of expression, but from the same transcript (so the relative difference is constant between samples).
+
+# ```{r}
+# setwd("D:/Grad School/projects/sequence_clustering")
+# source("src/luster_seq_mix.R")
+# 
+# 
+# m = 15
+# n = 1024
+# peak1 = 201:400
+# peak2 = 501:700
+# peak3 = 801:900
+# 
+# signal = matrix(0.1, nr = m, nc = n)
+# signal[1:5, peak1] = 2
+# signal[1:5, peak2] = 2.5
+# signal[1:5, peak3] = 3
+# signal[6:10, ] = signal[1:5, ] * 2
+# signal[11:15, ] = signal[6:10, ] * 2
+# 
+# x = matrix(rpois(m*n, signal), nr = m, nc = n)
+# 
+# 
+# res.nonsmooth = cluster.mix(x, smooth = FALSE, K = 3, tol = 1e-4, maxit = 4000)
+# res.smooth = cluster.mix(x, smooth = TRUE, K = 3, tol = 1e-4, maxit = 4000)
+# 
+# save.image("results/simulations/simulation_identifiability.RData")
+# 
+# ```
+
+```{r, fig.width = 6, fig.height = 10}
+setwd("D:/Grad School/projects/sequence_clustering")
+load("results/simulations/simulation_identifiability.RData")
+
+# pdf("results/simulations/simulation_identifiability.pdf", width = 8, height = 10)
+
+par(mfrow = c(2, 1))
+plot(res.nonsmooth$phi[1, ], type = 'l', main = "non-smoothed")
+lines(res.nonsmooth$phi[2, ], col = 2)
+lines(res.nonsmooth$phi[3, ], col = 3)
+
+plot(res.smooth$phi[1, ], ylim = c(0, 0.008), type = 'l', main = "smoothed")
+lines(res.smooth$phi[2, ], col = 2)
+lines(res.smooth$phi[3, ], col = 3)
+
+# dev.off()
+
+res.nonsmooth$pi
+res.smooth$pi
+
+
+```
+

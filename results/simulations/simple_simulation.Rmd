@@ -1,0 +1,83 @@
+---
+title: "Simple simulations"
+output: html_document
+---
+
+We first test the method with some simple simulations.
+
+```{r}
+setwd("D:/Grad School/projects/sequence_clustering")
+source("src/cluster_seq_mix.R")
+library(maptpx)
+
+get.max=function(x) which(x==max(x))
+normalize=function(x){
+  #if(sum(abs(x))!=0){
+    return(x/sum(x))
+  #}else{
+  #  return(rep(0,length(x)))
+  #}
+}
+
+
+#generate data
+
+K=4
+n=20
+B=1024
+lambda.true=matrix(0.1,nrow=4,ncol=1024)
+lambda.true[1,100:200]=1
+lambda.true[2,300:400]=10
+lambda.true[3,500:600]=3  #ML doesn't work well if this is 1
+lambda.true[4,700:800]=5
+phi.true=t(apply(lambda.true,1,normalize))
+
+pi.true=matrix(0,n,4)
+for(i in 1:n){
+  set.seed(10*i)
+  clus.ini=sample(1:K,1)
+  pi.true[i,clus.ini]=0.7
+  pi.true[i,-clus.ini]=0.1
+}
+
+y=matrix(0,nrow=n,ncol=B)
+for(i in 1:n){
+  for(b in 1:B){
+    lambda=sum(pi.true[i,]*lambda.true[,b])
+    y[i,b]=rpois(1,lambda)
+  }
+}
+
+
+#run different methods
+
+res.nonsmooth=cluster.mix(y,smooth=FALSE,K=4,tol=1e-4,maxit=4000)
+res.smooth=cluster.mix(y,smooth=TRUE,K=4,tol=1e-4,maxit=4000)
+res.tpx=topics(y,4)
+
+save.image("results/simulations/simple_simulation.RData")
+
+```
+
+```{r, fig.width = 6, fig.height = 12}
+
+load("results/simulations/simple_simulation.RData")
+
+pdf("results/simulations/simple_simulation.pdf", width = 6, height = 12)
+par(mfrow=c(4,1))
+plot(res.nonsmooth$phi[1,],type='l')
+lines(res.tpx$theta[,3],col=2)
+lines(res.smooth$phi[1,],col=4)
+plot(res.nonsmooth$phi[2,],type='l')
+lines(res.tpx$theta[,1],col=2)
+lines(res.smooth$phi[4,],col=4)
+plot(res.nonsmooth$phi[3,],type='l')
+lines(res.tpx$theta[,2],col=2)
+lines(res.smooth$phi[3,],col=4)
+plot(res.nonsmooth$phi[4,],type='l')
+lines(res.tpx$theta[,4],col=2)
+lines(res.smooth$phi[2,],col=4)
+dev.off()
+
+
+```
