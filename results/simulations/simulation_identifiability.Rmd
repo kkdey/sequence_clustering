@@ -5,9 +5,10 @@ output: html_document
 
 This is to try out what the clustering method (both smoothed and unsmoothed) produces when presented with samples that had varying degrees of expression, but from the same transcript (so the relative difference is constant between samples).
 
-# ```{r}
-# setwd("D:/Grad School/projects/sequence_clustering")
-# source("src/luster_seq_mix.R")
+```{r}
+# path = "D:/Grad School/projects/sequence_clustering"
+# setwd(path)
+# source(file.path(path, "src/cluster_seq_mix.R"))
 # 
 # 
 # m = 15
@@ -23,15 +24,25 @@ This is to try out what the clustering method (both smoothed and unsmoothed) pro
 # signal[6:10, ] = signal[1:5, ] * 2
 # signal[11:15, ] = signal[6:10, ] * 2
 # 
+# set.seed(7)
 # x = matrix(rpois(m*n, signal), nr = m, nc = n)
 # 
+# res.nosmooth.4 = cluster.mix(x, smooth = FALSE, K = 4, tol = 1e-4, maxit = 4000)
+# res.smooth.4 = cluster.mix(x, smooth = TRUE, K = 4, tol = 1e-4, maxit = 4000)
 # 
-# res.nonsmooth = cluster.mix(x, smooth = FALSE, K = 3, tol = 1e-4, maxit = 4000)
-# res.smooth = cluster.mix(x, smooth = TRUE, K = 3, tol = 1e-4, maxit = 4000)
+# res.nosmooth.3 = cluster.mix(x, smooth = FALSE, K = 3, tol = 1e-4, maxit = 4000)
+# res.smooth.3 = cluster.mix(x, smooth = TRUE, K = 3, tol = 1e-4, maxit = 4000)
+# 
+# res.nosmooth.2 = cluster.mix(x, smooth = FALSE, K = 2, tol = 1e-4, maxit = 4000)
+# res.smooth.2 = cluster.mix(x, smooth = TRUE, K = 2, tol = 1e-4, maxit = 4000)
+# 
+# res.nosmooth.1 = cluster.mix(x, smooth = FALSE, K = 1, tol = 1e-4, maxit = 4000)
+# res.smooth.1 = cluster.mix(x, smooth = TRUE, K = 1, tol = 1e-4, maxit = 4000)
+# 
 # 
 # save.image("results/simulations/simulation_identifiability.RData")
-# 
-# ```
+
+```
 
 ```{r, fig.width = 6, fig.height = 10}
 setwd("D:/Grad School/projects/sequence_clustering")
@@ -40,19 +51,63 @@ load("results/simulations/simulation_identifiability.RData")
 # pdf("results/simulations/simulation_identifiability.pdf", width = 8, height = 10)
 
 par(mfrow = c(2, 1))
-plot(res.nonsmooth$phi[1, ], type = 'l', main = "non-smoothed")
-lines(res.nonsmooth$phi[2, ], col = 2)
-lines(res.nonsmooth$phi[3, ], col = 3)
+plot(res.nosmooth.3$phi[1, ], type = 'l', main = "non-smoothed")
+lines(res.nosmooth.3$phi[2, ], col = 2)
+lines(res.nosmooth.3$phi[3, ], col = 3)
 
-plot(res.smooth$phi[1, ], ylim = c(0, 0.008), type = 'l', main = "smoothed")
-lines(res.smooth$phi[2, ], col = 2)
-lines(res.smooth$phi[3, ], col = 3)
+plot(res.smooth.3$phi[1, ], ylim = c(0, 0.008), type = 'l', main = "smoothed")
+lines(res.smooth.3$phi[2, ], col = 2)
+lines(res.smooth.3$phi[3, ], col = 3)
 
-# dev.off()
+sep_lines = c(5, 10)
 
-res.nonsmooth$pi
-res.smooth$pi
+par(mfrow = c(2, 1), mar=c(2, 2, 2, 2), oma = c(4, 4, 0.2, 0.2))
+barplot(t(res.nosmooth.3$pi), col = 2:4, axisnames = F, space = 0, border = NA, main = "structure plot for unsmoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+barplot(t(res.smooth.3$pi), col = 2:4, axisnames = F, space = 0, border = NA, main = "structure plot for smoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
 
 
 ```
 
+
+```{r}
+
+par(mfrow = c(2, 1))
+plot(res.nosmooth.4$phi[1, ], type = 'l', main = "non-smoothed")
+lines(res.nosmooth.4$phi[2, ], col = 2)
+lines(res.nosmooth.4$phi[3, ], col = 3)
+lines(res.nosmooth.4$phi[4, ], col = 4)
+
+
+plot(res.smooth.4$phi[1, ], ylim = c(0, 0.008), type = 'l', main = "smoothed")
+lines(res.smooth.4$phi[2, ], col = 2)
+lines(res.smooth.4$phi[3, ], col = 3)
+lines(res.smooth.4$phi[4, ], col = 4)
+
+par(mfrow = c(2, 1), mar=c(2, 2, 2, 2), oma = c(4, 4, 0.2, 0.2))
+barplot(t(res.nosmooth.4$pi), col = 2:5, axisnames = F, space = 0, border = NA, main = "structure plot for unsmoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+barplot(t(res.smooth.4$pi), col = 2:5, axisnames = F, space = 0, border = NA, main = "structure plot for smoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+
+```
+
+
+```{r}
+
+par(mfrow = c(2, 1))
+plot(res.nosmooth.2$phi[1, ], type = 'l', main = "non-smoothed")
+lines(res.nosmooth.2$phi[2, ], col = 2)
+
+plot(res.smooth.2$phi[1, ], ylim = c(0, 0.008), type = 'l', main = "smoothed")
+lines(res.smooth.2$phi[2, ], col = 2)
+
+par(mfrow = c(2, 1), mar=c(2, 2, 2, 2), oma = c(4, 4, 0.2, 0.2))
+barplot(t(res.nosmooth.2$pi), col = 2:3, axisnames = F, space = 0, border = NA, main = "structure plot for unsmoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+barplot(t(res.smooth.2$pi), col = 2:3, axisnames = F, space = 0, border = NA, main = "structure plot for smoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+abline(v = sep_lines, lwd = 2)
+
+
+```

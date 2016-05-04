@@ -1,0 +1,118 @@
+---
+title: "Further exploration of 3 vs 4 clusters"
+output: html_document
+---
+
+
+```{r}
+library(smash)
+library(multiseq)
+
+path = "D:/Grad School/projects/sequence_clustering/"
+load(paste0(path, "data/oas1/OAS1.Robj"))
+
+load(paste0(path, "results/analysis_oas1/res_nosmooth_4.RData"))
+res_nosmooth = res
+load(paste0(path, "results/analysis_oas1/res_smooth_4.RData"))
+res_smooth = res
+
+normalize = function(x) x/sum(x)
+
+M = as.matrix(Robj$M$M)
+M = M[, 2049:4096]
+
+ordering = order(Robj$g)
+M_ordered = M[ordering, ]
+g_ordered = Robj$g[ordering]
+
+smooth_pi_unordered = res_smooth$pi
+smooth_pi_ordered = smooth_pi_unordered[ordering, ]
+```
+
+First we look at what the aggregate picture looks like
+
+```{r, fig.width = 12, fig.height = 5}
+
+par(mfrow = c(1, 1))
+plot(normalize(exp(multiseq(M_ordered[g_ordered == 1, ])$baseline.mean)), ylim = c(0, 0.015), type = 'l')
+lines(res_smooth$phi[2, ], col = 2)
+
+```
+
+Now we look at a few samples which have large proportions in the red group (with a bit of the others).
+
+```{r, fig.width = 12, fig.height = 9}
+par(mfrow = c(2, 1))
+plot(normalize(ashsmooth.pois(M_ordered[8, ])), ylim = c(0, 0.015), type = 'l')
+lines(smooth_pi_ordered[8, 2] * res_smooth$phi[2, ], col = 2)
+plot(normalize(ashsmooth.pois(M_ordered[9, ])), ylim = c(0, 0.015), type = 'l')
+lines(smooth_pi_ordered[9, 2] * res_smooth$phi[2, ], col = 2)
+```
+
+```{r, fig.width = 12, fig.height = 9}
+par(mfrow = c(2, 1))
+plot(normalize(ashsmooth.pois(M_ordered[59, ])), ylim = c(0, 0.015), type = 'l')
+lines(smooth_pi_ordered[59, 2] * res_smooth$phi[2, ], col = 2)
+plot(normalize(ashsmooth.pois(M_ordered[58, ])), ylim = c(0, 0.015), type = 'l')
+lines(smooth_pi_ordered[58, 2] * res_smooth$phi[2, ], col = 2)
+```
+
+```{r, fig.width = 12, fig.height = 9}
+par(mfrow = c(2, 1))
+plot(normalize(ashsmooth.pois(M_ordered[63, ])), ylim = c(0, 0.015), type = 'l')
+lines(smooth_pi_ordered[63, 2] * res_smooth$phi[2, ], col = 2)
+plot(normalize(ashsmooth.pois(M_ordered[58, ])), ylim = c(0, 0.015), type = 'l')
+lines(smooth_pi_ordered[58, 2] * res_smooth$phi[2, ], col = 2)
+```
+
+```{r}
+load(paste0(path, "results/analysis_oas1/res_smooth_4_mod.RData"))
+res_smooth_mod = res
+
+ordering = order(g)
+M_ordered = M[ordering, ]
+g_ordered = Robj$g[ordering]
+
+smooth_pi_unordered_mod = res_smooth_mod$pi
+smooth_pi_ordered_mod = smooth_pi_unordered_mod[ordering, c(3, 1, 4, 2)]
+```
+
+
+```{r, fig.width = 12, fig.height = 8}
+par(mfrow = c(1, 1))
+plot(res_smooth_mod$phi[1, ], col = 2, ylim = c(0, 0.015), type = 'l', main = "smoothed clusters")
+lines(res_smooth_mod$phi[2, ], col = 5)
+lines(res_smooth_mod$phi[3, ], col = 3)
+lines(res_smooth_mod$phi[4, ], col = 4)
+
+K = dim(smooth_pi_ordered_mod)[2]
+
+barplot(t(smooth_pi_ordered_mod), col = c(3, 2, 4:(K+1)), axisnames = F, space = 0, border = NA, main = "structure plot for smoothed model", las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+
+```
+
+
+
+```{r}
+path = "D:/Grad School/projects/sequence_clustering/"
+res_nosmooth$loglik
+res_smooth$loglik
+
+load(paste0(path, "results/analysis_oas1/res_nosmooth_3.RData"))
+res_nosmooth = res
+load(paste0(path, "results/analysis_oas1/res_smooth_3.RData"))
+res_smooth = res
+
+res_nosmooth$loglik
+res_smooth$loglik
+
+load(paste0(path, "results/analysis_oas1/res_nosmooth_2.RData"))
+res_nosmooth = res
+load(paste0(path, "results/analysis_oas1/res_smooth_2.RData"))
+res_smooth = res
+
+res_nosmooth$loglik
+res_smooth$loglik
+
+```
+
