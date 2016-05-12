@@ -46,3 +46,5 @@ gene_region = paste0(gsub("^chr", "", gene_info$V2), ":", gene_info$V4, "-", gen
 
 write(sample_list, "supplemental/gtex/sample_list.txt")
 write(gene_region, "supplemental/gtex/gene_region.txt")
+
+save(runinfo_subset, gene_region, file = "supplemental/gtex/runinfo_subset.Robj")

@@ -1,0 +1,132 @@
+---
+title: "Explore connections between clusters and SNPs around the OAS1 gene"
+output: html_document
+---
+
+
+
+```{r, warning = FALSE}
+vcfdata = read.table("../../data/oas1/12.113000000-113800000.ALL.chr12.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf", header = FALSE)
+vcfinfo = vcfdata[, 1:3]
+snp_orig = vcfinfo[which(vcfinfo[, 3] == "rs10774671"), ]
+
+genotype = read.table("../../data/oas1/oas1_yri_geno.012", header = FALSE)
+indv = read.table("../../data/oas1/oas1_yri_geno.012.indv", header = FALSE)
+pos = read.table("../../data/oas1/oas1_yri_geno.012.pos", header = FALSE)
+snp_orig_pos = which(pos[, 2] == snp_orig[, 2])
+
+row.names(genotype) = indv[, 1]
+
+indv.id =  c("NA18486", "NA18498", "NA18499", "NA18501", "NA18504", "NA18505", "NA18507",
+  "NA18508", "NA18510", "NA18511", "NA18516", "NA18517", "NA18519", "NA18520",
+  "NA18522", "NA18523", "NA18852", "NA18855", "NA18858", "NA18861", "NA18862",
+  "NA18870", "NA18871", "NA18909", "NA18912", "NA18913", "NA18916", "NA19093",
+  "NA19098", "NA19099", "NA19101", "NA19102", "NA19108", "NA19114", "NA19116",
+  "NA19119", "NA19127", "NA19128", "NA19130", "NA19131", "NA19137", "NA19138",
+  "NA19140", "NA19143", "NA19144", "NA19147", "NA19152", "NA19153", "NA19159",
+  "NA19160", "NA19171", "NA19172", "NA19190", "NA19192", "NA19193", "NA19200",
+  "NA19201", "NA19203", "NA19204", "NA19209", "NA19210", "NA19222", "NA19225",
+  "NA19238", "NA19239", "NA19257")
+
+indv.id %in% row.names(genotype)
+
+#Subset genotype matrix for 1000 Genomes individuals to those in the Pickrell paper
+genotype = genotype[row.names(genotype) %in% indv.id, ]
+genotype = genotype[, -1]
+
+
+```
+
+
+
+```{r, warning = FALSE}
+load("../../results/analysis_oas1/res_smooth_4.RData")
+res_smooth = res
+load(paste0("../../data/oas1/OAS1.Robj"))
+
+#Subset individuals in the Pickrell paper to those in 1000 Genomes(66 -> 55 individuals)
+K = 4
+g = Robj$g[indv.id %in% row.names(genotype)]
+ordering = order(g)
+smooth_pi_unordered = res_smooth$pi
+smooth_pi_unordered_trunc = smooth_pi_unordered[indv.id %in% row.names(genotype), ]
+smooth_pi_ordered_trunc = smooth_pi_unordered_trunc[ordering, ]
+
+indv.id.ordered = indv.id[ordering]
+
+
+#Construct #clusters by #snps correlation matrix, where (i,j)th entry is the correlation between cluster memberships (for the 55 samples) and genotypes (for the 55 samples)
+
+cor.clust = matrix(0, nr = K, nc = dim(genotype)[2])
+for(j in 1:dim(genotype)[2]){
+  for(i in 1:K){
+    cor.clust[i, j] = cor(smooth_pi_ordered_trunc[, i], genotype[ordering, j])
+  }
+}
+
+for(i in 1:K){
+  plot(cor.clust[i, ], ylab = "correlation", main = paste0("correlation between cluster memberships and genotypes for cluster ", i))
+  abline(v = snp_orig_pos, lty = 2, col = 2)
+}
+
+#1-green,2-red,3-blue,4-cyan
+index.c1 = which(abs(cor.clust[1, ])>0.5)
+index.c2 = which(abs(cor.clust[2, ])>0.4)
+index.c3 = which(abs(cor.clust[3, ])>0.5)
+index.c4 = which(abs(cor.clust[4, ])>0.58)
+
+```
+
+For the green cluster, it appears that SNPs nearby are in LD with the SNP of interest, resulting in higher correlations.
+For the red cluster, #7023 appears in the green, and is in LD with SNP of interest. #5159, #8096, #10787, #15429, #16817 are interesting in that the genotypes for these SNPs are 0 for all individuals except for the single individual that almost belongs exclusively to the red cluster.
+For the blue cluster, the only SNPs with a moderate amount of correlation lie close to SNP of interest, so possibly LD.
+For the cyan cluster, again #5159, #8096, #10787, #15429, #16817 appear. This is because the single individual that belongs almost exclusively to the red cluster is the only individual with almost no proportion of membership in the cyan cluster.
+
+
+
+```{r, warning = FALSE}
+#Try using LM of cluster memberships against genotype - essentially same as using correlation
+
+# p.val = matrix(0, nr = K, nc = dim(genotype)[2])
+# for(j in 1:dim(genotype)[2]){
+#   for(i in 1:K){
+#     fit = lm(smooth_pi_ordered_trunc[, i] ~ genotype[ordering, j])
+#     if(is.na(fit$coef[2])){
+#       p.val[i, j] = NA
+#     }else{
+#       p.val[i, j] = summary(fit)$coef[2, 4]
+#     }
+#   }
+# }
+# 
+# for(i in 1:K){
+#   plot(p.val[i, ], ylim = c(0, 0.05), ylab = "p-value", main = paste0("p-value from regression of cluster memberships on genotypes for cluster ", i))
+#   abline(v = snp_orig_pos, lty = 2, col = 2)
+# }
+
+```
+
+Now we regress genotype on cluster memberships as multivariate covariate. Not sure if it's entirely interpretable though, as the covariates in this case are negatively correlated (sometimes quite strongly), and it seems harder to trust the p-values in this case?
+
+```{r, warning = FALSE}
+#Now regress genotype on cluster membership as multivariate covariate
+
+p.val.mult = matrix(0, nr = K - 1, nc = dim(genotype)[2]) 
+for(j in 1:dim(genotype)[2]){
+  fit = lm(genotype[ordering, j] ~ smooth_pi_ordered_trunc[, c(1, 2, 4)])
+  p.val.mult[, j] = summary(fit)$coef[2:4, 4]
+}
+
+
+for(i in 1:(K-1)){
+  plot(p.val.mult[i, ], ylim = c(0, 0.05), ylab = "p-value", main = paste0("p-value from regression of cluster memberships on genotypes for cluster ", i))
+  abline(v = snp_orig_pos, lty = 2, col = 2)
+}
+
+index.p1 = which(p.val.mult[1, ] < 0.001)
+index.p2 = which(p.val.mult[2, ] < 0.002)
+index.p4 = which(p.val.mult[3, ] < 0.001)
+
+```
+
+Doing this gives a bunch of different SNPs that have the smallest p-values. For the green cluster, we have (in addition)  #7082, #7083, #9037, #9583,  #9585, #12178. For the red cluster, we have #12178, #12719, #13040, #13286, #13875, #16605, #17864, #18476, #18669, #19494, #19862, #20000, #20939, #21467. 
