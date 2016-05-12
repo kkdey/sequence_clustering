@@ -5,8 +5,7 @@ get.counts.single = function(bamfile, region){
   cmd <- paste0("| awk -v s='1' 'BEGIN{start=0; count=0}", 
                 "{st=$4; if ($4>=s){if (start==st) count+=1; ", "else {if (start>0) print start, count; start=st; count=1} }}' ")
   
-  command <- paste0("samtools view ", data, " ", 
-                    cmd)
+  command <- paste0("samtools view ", bamfile, " ", cmd)
   print(command)
   con <- pipe(command, open = "r")
   v <- rep(0, locus.length)
@@ -14,7 +13,7 @@ get.counts.single = function(bamfile, region){
            0) {
     oneLine <- as.numeric(unlist(strsplit(oneLine, 
                                           " ")))
-    print(oneLine)
+    #print(oneLine)
     v[oneLine[1] - region$start + 1] <- oneLine[2]
   }
   close(con)
