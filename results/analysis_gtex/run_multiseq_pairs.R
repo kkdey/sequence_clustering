@@ -4,14 +4,18 @@ library(multiseq)
 args = commandArgs(TRUE)
 file = as.character(args[1])
 
-region = unlist(strsplit(file, "[.]"))
+region = unlist(strsplit(file, "[/]"))
+region = region[length(region)]
+region = unlist(strsplit(region, "[.]"))
 region = region[1]
 region = unlist(strsplit(region, "_"))
 region = region[-(1:2)]
 region = paste(region, collapse = "_")
 
+print(region)
+print(file)
 
-load(file.path("../../data/gtex", file))
+load(file)
 
 
 res_multiseq = list()
