@@ -4,9 +4,11 @@ library(multiseq)
 args = commandArgs(TRUE)
 file = as.character(args[1])
 
-region = unlist(strsplit(file, "_"))
+region = unlist(strsplit(file, "[.]"))
+region = region[1]
+region = unlist(strsplit(region, "_"))
 region = region[-(1:2)]
-region = paste(region, "_")
+region = paste(region, collapse = "_")
 
 
 load(file.path("../../data/gtex", file))
@@ -35,7 +37,7 @@ for(i in 2:8){
 
 
 for(i in 1:7){
-  pdfname = paste("multiseq_effect_100", tissue1[i], tissue2[i], region, "_")
+  pdfname = paste("multiseq_effect_100", tissue1[i], tissue2[i], region, sep = "_")
   pdf(paste0(pdfname, ".pdf"), height = 6, width = 9)
   plot(res_multiseq[[i]]$effect.mean, ylab = "effect", main = paste("Effect size estimates between tissues", tissue1[i], "and", tissue2[i], " "), type = 'l')
   abline(h = 0, lty = 2, col = 2)
