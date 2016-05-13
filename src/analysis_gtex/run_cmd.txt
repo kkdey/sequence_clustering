@@ -15,6 +15,7 @@ sh qsub_get_counts_from_bam.sh 100 chr2:55459038-55462989
 sh qsub_get_counts_from_bam.sh 100 chr20:57603732-57607422
 sh qsub_get_counts_from_bam.sh 100 chr3:101399933-101405563
 sh qsub_get_counts_from_bam.sh 100 chr5:150399998-150408554
+sh qsub_get_counts_from_bam.sh 100 chr6:33239851-33244281
 sh qsub_get_counts_from_bam.sh 100 chr6:44214694-44221625
 sh qsub_get_counts_from_bam.sh 100 chr6:133135707-133138703
 sh qsub_get_counts_from_bam.sh 100 chr8:146015153-146017805
