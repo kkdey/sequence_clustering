@@ -1,7 +1,6 @@
 library(multiseq)
 
 
-args = commandArgs(TRUE)
 file = "../../data/gtex/reads_100_10_73576054_73611082.Robj"
 
 region = unlist(strsplit(file, "[/]"))
