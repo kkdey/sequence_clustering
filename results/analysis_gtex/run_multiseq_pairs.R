@@ -23,15 +23,22 @@ for(i in 1:7){
 tissue1 = NULL
 tissue2 = NULL
 for(i in 1:7){
-  tissue1[i] = c(tissue1, reads[[i]][[1]])
-  tissue2[i] = c(tissue2, reads[[i+1]][[1]])
+  temp = reads[[i]][[1]]
+  temp = gsub(" .*$", "", temp)
+  tissue1 = c(tissue1, temp)
+}
+for(i in 2:8){
+  temp = reads[[i]][[1]]
+  temp = gsub(" .*$", "", temp)
+  tissue2 = c(tissue2, temp)
 }
 
 
 for(i in 1:7){
   pdfname = paste("multiseq_effect_100", tissue1[i], tissue2[i], region, "_")
   pdf(paste0(pdfname, ".pdf"), height = 6, width = 9)
-  plot(res_multiseq[[i]]$effect.mean, ylab = "effect", main = paste("Effect size estimates between tissues", tissue1[i], "and", tissue2[i], " "))
+  plot(res_multiseq[[i]]$effect.mean, ylab = "effect", main = paste("Effect size estimates between tissues", tissue1[i], "and", tissue2[i], " "), type = 'l')
+  abline(h = 0, lty = 2, col = 2)
   dev.off()
 }
 
