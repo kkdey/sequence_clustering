@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MEM=40g
+MEM=20g
 
 LOG_DIR="$HOME/projects/sequence_clustering/results/analysis_gtex/logs/"
 if [ ! -d "${LOG_DIR}" ]; then

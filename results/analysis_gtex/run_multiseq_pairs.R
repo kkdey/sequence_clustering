@@ -1,6 +1,5 @@
 library(multiseq)
 
-setwd("results/analysis_gtex")
 
 args = commandArgs(TRUE)
 file = as.character(args[1])
