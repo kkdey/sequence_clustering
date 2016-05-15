@@ -1,4 +1,6 @@
 data/
+results/analysis_gtex/logs
+results/analysis_gtex/res_multiseq
 results/debug.RData
 .Rhistory
 *.Rhistory
