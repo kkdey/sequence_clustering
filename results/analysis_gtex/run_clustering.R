@@ -1,4 +1,4 @@
-source("../../cluster_seq_mix.R")
+source("../../src/cluster_seq_mix.R")
 
 
 
