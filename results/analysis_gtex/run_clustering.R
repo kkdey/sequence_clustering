@@ -1,5 +1,4 @@
-setwd("~/projects/sequence_clustering")
-source("cluster_seq_mix.R")
+source("../../cluster_seq_mix.R")
 
 
 
