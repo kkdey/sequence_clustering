@@ -1,9 +1,9 @@
 #!/bin/sh
 
-MEM=40g
 K=$1
 sample_size=$2
 region=$3
+MEM=$4
 
 LOG_DIR="$HOME/projects/sequence_clustering/results/analysis_gtex/logs/"
 if [ ! -d "${LOG_DIR}" ]; then
