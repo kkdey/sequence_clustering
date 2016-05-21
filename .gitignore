@@ -1,14 +1,6 @@
-<<<<<<< HEAD
 data/
 results/analysis_gtex/logs
 results/analysis_gtex/res_multiseq
 results/debug.RData
+results/analysis_gtex/*.RData
 .Rhistory
-=======
-data/
-results/analysis_gtex/logs
-results/analysis_gtex/res_multiseq
-results/debug.RData
-.Rhistory
->>>>>>> refs/remotes/origin/master
-*.Rhistory

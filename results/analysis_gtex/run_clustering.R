@@ -25,6 +25,6 @@ for(i in 1:8){
 
 res = cluster.mix(data_matrix, smooth = TRUE, K = K, tol = 1e-4, maxit = 5000)
 
-save_name = paste("cluster_res_100", K, "clusters", region)
+save_name = paste("cluster_res_100", K, "clusters", region, sep = "_")
 save_name = paste0(save_name, ".RData")
 save.image(save_name)
