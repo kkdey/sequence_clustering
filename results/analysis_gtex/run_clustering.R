@@ -7,7 +7,7 @@ K = as.numeric(args[1])
 sample_size = as.numeric(args[2])
 region = as.character(args[3])
 
-if(sample_size !=0){
+if(sample_size != 0){
   file = paste0("reads_100_", region, ".Robj")
 }else{
   file = paste0("reads_all_", region, ".Robj")
