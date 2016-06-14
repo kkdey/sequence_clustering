@@ -103,37 +103,37 @@ sh qsub_run_clustering.sh 3 0 19_49999621_50002969 20g
 sh qsub_run_clustering.sh 3 0 20_57603732_57607422 20g
 
 
-  
-sh qsub_run_clustering.sh 4 0 2_55459038_55462989 40g
-sh qsub_run_clustering.sh 4 0 3_101399933_101405563 40g
-sh qsub_run_clustering.sh 4 0 6_33239851_33244281 40g
-sh qsub_run_clustering.sh 4 0 6_44214694_44221625 40g
-sh qsub_run_clustering.sh 4 0 6_133135707_133138703 40g
-sh qsub_run_clustering.sh 4 0 8_146015153_146017805 40g
-sh qsub_run_clustering.sh 4 0 11_809935_812876 40g
-sh qsub_run_clustering.sh 4 0 11_17095938_17099220 40g
-sh qsub_run_clustering.sh 4 0 15_69745158_69747884 40g
-sh qsub_run_clustering.sh 4 0 17_37356535_37360980 40g
-sh qsub_run_clustering.sh 4 0 19_2269519_2273487 40g
-sh qsub_run_clustering.sh 4 0 19_3976053_3985461 40g
-sh qsub_run_clustering.sh 4 0 19_39923846_39926618 40g
-sh qsub_run_clustering.sh 4 0 19_49999621_50002969 40g
-sh qsub_run_clustering.sh 4 0 20_57603732_57607422 40g
+
+sh qsub_run_clustering.sh 4 0 2_55459038_55462989 20g
+sh qsub_run_clustering.sh 4 0 3_101399933_101405563 20g
+sh qsub_run_clustering.sh 4 0 6_33239851_33244281 20g
+sh qsub_run_clustering.sh 4 0 6_44214694_44221625 20g
+sh qsub_run_clustering.sh 4 0 6_133135707_133138703 20g
+sh qsub_run_clustering.sh 4 0 8_146015153_146017805 20g
+sh qsub_run_clustering.sh 4 0 11_809935_812876 20g
+sh qsub_run_clustering.sh 4 0 11_17095938_17099220 20g
+sh qsub_run_clustering.sh 4 0 15_69745158_69747884 20g
+sh qsub_run_clustering.sh 4 0 17_37356535_37360980 20g
+sh qsub_run_clustering.sh 4 0 19_2269519_2273487 20g
+sh qsub_run_clustering.sh 4 0 19_3976053_3985461 20g
+sh qsub_run_clustering.sh 4 0 19_39923846_39926618 20g
+sh qsub_run_clustering.sh 4 0 19_49999621_50002969 20g
+sh qsub_run_clustering.sh 4 0 20_57603732_57607422 20g
 
 
 
-sh qsub_run_clustering.sh 5 0 2_55459038_55462989 40g
-sh qsub_run_clustering.sh 5 0 3_101399933_101405563 40g
-sh qsub_run_clustering.sh 5 0 6_33239851_33244281 40g
-sh qsub_run_clustering.sh 5 0 6_44214694_44221625 40g
-sh qsub_run_clustering.sh 5 0 6_133135707_133138703 40g
-sh qsub_run_clustering.sh 5 0 8_146015153_146017805 40g
-sh qsub_run_clustering.sh 5 0 11_809935_812876 40g
-sh qsub_run_clustering.sh 5 0 11_17095938_17099220 40g
-sh qsub_run_clustering.sh 5 0 15_69745158_69747884 40g
-sh qsub_run_clustering.sh 5 0 17_37356535_37360980 40g
-sh qsub_run_clustering.sh 5 0 19_2269519_2273487 40g
-sh qsub_run_clustering.sh 5 0 19_3976053_3985461 40g
-sh qsub_run_clustering.sh 5 0 19_39923846_39926618 40g
-sh qsub_run_clustering.sh 5 0 19_49999621_50002969 40g
-sh qsub_run_clustering.sh 5 0 20_57603732_57607422 40g
+sh qsub_run_clustering.sh 5 0 2_55459038_55462989 20g
+sh qsub_run_clustering.sh 5 0 3_101399933_101405563 20g
+sh qsub_run_clustering.sh 5 0 6_33239851_33244281 20g
+sh qsub_run_clustering.sh 5 0 6_44214694_44221625 20g
+sh qsub_run_clustering.sh 5 0 6_133135707_133138703 20g
+sh qsub_run_clustering.sh 5 0 8_146015153_146017805 20g
+sh qsub_run_clustering.sh 5 0 11_809935_812876 20g
+sh qsub_run_clustering.sh 5 0 11_17095938_17099220 20g
+sh qsub_run_clustering.sh 5 0 15_69745158_69747884 20g
+sh qsub_run_clustering.sh 5 0 17_37356535_37360980 20g
+sh qsub_run_clustering.sh 5 0 19_2269519_2273487 20g
+sh qsub_run_clustering.sh 5 0 19_3976053_3985461 20g
+sh qsub_run_clustering.sh 5 0 19_39923846_39926618 20g
+sh qsub_run_clustering.sh 5 0 19_49999621_50002969 20g
+sh qsub_run_clustering.sh 5 0 20_57603732_57607422 20g
