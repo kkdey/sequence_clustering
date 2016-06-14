@@ -16,12 +16,14 @@ smooth.lambda = function(lambda){
 EMupd.mix=function(y,smooth,pi,phi,n,K,B){
   #gamma is nB*K, pi is n*K, phi is K*B, y is n*B
   gamma=pi[rep(1:n,each=B),]*t(phi)[rep(1:B,n),]
-  gamma=t(apply(gamma,1,normalize))
+  gamma=gamma/rowSums(gamma)
   gamma[is.na(gamma)]=1/K
   gammab=(as.vector(t(y))%o%rep(1,K))*gamma
-  pi.num=(diag(1,n)[,rep(1:n,each=B)])%*%gammab
+  pi.num=t(apply(array(gammab,dim=c(B,n,K)),2,colSums))
+  #pi.num=(diag(1,n)[,rep(1:n,each=B)])%*%gammab
   pi=pi.num/(rowSums(y)%o%rep(1,K))
-  ybt=(diag(1,B)[,rep(1:B,n)])%*%gammab
+  ybt=t(apply(array(gammab,dim=c(B,n,K)),1,colSums))
+  #ybt=(diag(1,B)[,rep(1:B,n)])%*%gammab
   #ybw=(diag(1,B)[,rep(1:B,n)])%*%gamma
   phi=t(ybt/(rep(1,B)%o%colSums(gammab)))
   #phi[phi==0]=pseudocounts
@@ -138,7 +140,7 @@ cluster.mix=function(y,smooth=TRUE,pi0=NULL,phi0=NULL,K,tol,maxit){
   if(is.null(pi0)) pi0=rep(1,n)%o%normalize(as.vector(table(kmeans.init$cluster)))
 
   if(is.null(phi0)){
-    phi0=t(apply(kmeans.init$centers,1,normalize))
+    phi0=kmeans.init$centers
     #phi0[phi0==0]=pseudocounts
     #phi0=t(apply(phi0,1,normalize))
     row.names(phi0)=NULL

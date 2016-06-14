@@ -19,3 +19,26 @@ sh qsub_get_counts_from_bam.sh 100 chr6:33239851-33244281
 sh qsub_get_counts_from_bam.sh 100 chr6:44214694-44221625
 sh qsub_get_counts_from_bam.sh 100 chr6:133135707-133138703
 sh qsub_get_counts_from_bam.sh 100 chr8:146015153-146017805
+
+
+sh qsub_get_counts_from_bam.sh 0 chr1:93297593-93307481
+sh qsub_get_counts_from_bam.sh 0 chr10:73576054-73611082
+sh qsub_get_counts_from_bam.sh 0 chr11:809935-812876
+sh qsub_get_counts_from_bam.sh 0 chr11:17095938-17099220
+sh qsub_get_counts_from_bam.sh 0 chr11:61731756-61735132
+sh qsub_get_counts_from_bam.sh 0 chr12:125396191-125399587
+sh qsub_get_counts_from_bam.sh 0 chr15:69745158-69747884
+sh qsub_get_counts_from_bam.sh 0 chr17:37356535-37360980
+sh qsub_get_counts_from_bam.sh 0 chr19:2269519-2273487
+sh qsub_get_counts_from_bam.sh 0 chr19:3976053-3985461
+sh qsub_get_counts_from_bam.sh 0 chr19:39923846-39926618
+sh qsub_get_counts_from_bam.sh 0 chr19:49468565-49470136
+sh qsub_get_counts_from_bam.sh 0 chr19:49999621-50002969
+sh qsub_get_counts_from_bam.sh 0 chr2:55459038-55462989
+sh qsub_get_counts_from_bam.sh 0 chr20:57603732-57607422
+sh qsub_get_counts_from_bam.sh 0 chr3:101399933-101405563
+sh qsub_get_counts_from_bam.sh 0 chr5:150399998-150408554
+sh qsub_get_counts_from_bam.sh 0 chr6:33239851-33244281
+sh qsub_get_counts_from_bam.sh 0 chr6:44214694-44221625
+sh qsub_get_counts_from_bam.sh 0 chr6:133135707-133138703
+sh qsub_get_counts_from_bam.sh 0 chr8:146015153-146017805
