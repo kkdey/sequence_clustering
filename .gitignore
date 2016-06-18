@@ -3,4 +3,5 @@ results/analysis_gtex/logs
 results/analysis_gtex/res_multiseq
 results/debug.RData
 results/analysis_gtex/*.RData
+results/analysis_gtex/no_subject_info
 .Rhistory
