@@ -5,7 +5,7 @@ gene_region = gsub("\\-", "_", gene_region)
 
 #check to see if there are any regions with 0 total reads
 for(i in 1:length(gene_region)){
-  load(paste0("data/gtex/reads_100_", gene_region[i], ".Robj"))
+  load(paste0("data/gtex/reads_all_", gene_region[i], ".Robj"))
   
   check = 0
   for(i in 1:8){
