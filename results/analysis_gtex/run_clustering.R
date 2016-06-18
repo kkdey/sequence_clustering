@@ -16,14 +16,19 @@ load(file.path("../../data/gtex", file))
 
 
 data_matrix = NULL
+info_full = NULL
 tissue_name = NULL
 for(i in 1:8){
   data_temp = reads[[i]][[2]]
+  info_temp = info[[i]]
   if(sample_size != 0){
+    set.seed(618)
     sample_ind = sample(1:100, sample_size)
     data_temp = data_temp[sample_ind, ]
+    info_temp = info_temp[sample_ind, ]
   }
   data_matrix = rbind(data_matrix, data_temp)
+  info_full = c(info_full, info_temp)
   tissue_name_temp = reads[[i]][[1]]
   tissue_name_temp = gsub(" .*$", "", tissue_name_temp)
   tissue_name = c(tissue_name, tissue_name_temp)

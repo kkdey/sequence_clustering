@@ -15,16 +15,46 @@ gene_region = gsub("\\-", "_", gene_region)
 ```{r, echo=FALSE, fig.height = 10, fig.width = 8}
 
 
+# for(K in 2:5){
+#   for(i in 1:length(gene_region)){
+#     load_name = paste("cluster_res_100", K, "clusters", gene_region[i], sep = "_")
+#     load_name = paste0(load_name, ".RData")
+#     if(!file.exists(load_name)) next
+#     load(load_name)
+#     
+#     n = dim(res$pi)[1]
+#     sep_lines = seq(0, n, length.out = 9)
+#     sep_lines = sep_lines[c(-1, -length(sep_lines))]
+#     
+#     par(mfrow = c(2, 1))
+#     plot(res$phi[1, ], type = 'l', col = 2, main = paste0("cluster center for ", region))
+#     for(k in 2:K){
+#       lines(res$phi[k, ], col = k + 1)
+#     }
+#     barplot(t(res$pi), col = 2:(K + 1), axisnames = F, space = 0, border = NA, main = paste0("structure plot for ", region), las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
+#     abline(v = sep_lines, lwd = 2)
+#   }
+# }
+
+
+```{r, echo=FALSE, fig.height = 10, fig.width = 8}
+
+
 for(K in 2:5){
   for(i in 1:length(gene_region)){
-    load_name = paste("cluster_res_100", K, "clusters", gene_region[i], sep = "_")
+    load_name = paste("cluster_res_all", K, "clusters", gene_region[i], sep = "_")
     load_name = paste0(load_name, ".RData")
     if(!file.exists(load_name)) next
     load(load_name)
     
-    n = dim(res$pi)[1]
-    sep_lines = seq(0, n, length.out = 9)
-    sep_lines = sep_lines[c(-1, -length(sep_lines))]
+    sep_lines = 0
+    for(j in 1:(length(reads) - 1)){
+      temp = dim(reads[[j]][[2]])[1]
+      sep_lines[j + 1] = sep_lines[j] + temp
+    }
+    
+    sep_lines = sep_lines[c(-1, -length(reads))]
+
     
     par(mfrow = c(2, 1))
     plot(res$phi[1, ], type = 'l', col = 2, main = paste0("cluster center for ", region))
@@ -35,5 +65,8 @@ for(K in 2:5){
     abline(v = sep_lines, lwd = 2)
   }
 }
+```
+
+
 ```
 
