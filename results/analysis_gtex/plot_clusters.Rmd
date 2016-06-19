@@ -55,6 +55,11 @@ for(K in 2:5){
     
     sep_lines = sep_lines[c(-1, -length(reads))]
 
+    tissue_name_full = NULL
+    for(j in 1:(length(reads) - 1)){
+      temp = rep(tissue_name[j], dim(reads[[j]][[2]])[1])
+      tissue_name_full = c(tissue_name_full, temp)
+    }
     
     par(mfrow = c(2, 1))
     plot(res$phi[1, ], type = 'l', col = 2, main = paste0("cluster center for ", region))
