@@ -1,68 +1,50 @@
-load("simple_simulation.RData")
-
-mse = function(x, y) mean((x - y)^2)
-
-source("../../src/cluster_seq_mix.R")
-
-get.max=function(x) which(x==max(x))
-normalize=function(x){
-  #if(sum(abs(x))!=0){
-  return(x/sum(x))
-  #}else{
-  #  return(rep(0,length(x)))
-  #}
-}
-
-
-#generate data
-
-K=4
-n=20
-B=1024
-lambda.true=matrix(0.1,nrow=4,ncol=1024)
-lambda.true[1,100:200]=1
-lambda.true[2,300:400]=10
-lambda.true[3,500:600]=3  #ML doesn't work well if this is 1
-lambda.true[4,700:800]=5
-phi.true=t(apply(lambda.true,1,normalize))
-
-mse.pi.smooth=0
-mse.pi.nosmooth=0
-mse.phi.smooth=0
-mse.phi.nosmooth=0
+mse.pi.smooth.all=0
+mse.phi.smooth.all=0
+mse.pi.nosmooth.all=0
+mse.phi.nosmooth.all=0
 
 for(i in 1:100){
-
-  set.seed(10*i)
-  
-  pi.true=matrix(0,n,4)
-  for(j in 1:n){
-    clus.ini=sample(1:K,1)
-    pi.true[j,clus.ini]=0.7
-    pi.true[j,-clus.ini]=0.1
+  load(paste0("simple_simulation_mse_", i, ".RData"))
+  ordering.smooth=NULL
+  ordering.nosmooth=NULL
+  for(k in 1:4){
+    mse.temp.smooth=apply((res.smooth$phi-rep(1,4)%o%phi.true[k,])^2,1,mean)
+    mse.temp.nosmooth=apply((res.nosmooth$phi-rep(1,4)%o%phi.true[k,])^2,1,mean)
+    ordering.smooth[k]=which(mse.temp.smooth==min(mse.temp.smooth))
+    ordering.nosmooth[k]=which(mse.temp.nosmooth==min(mse.temp.nosmooth))    
   }
   
-  y=matrix(0,nrow=n,ncol=B)
-  for(k in 1:n){
-    for(b in 1:B){
-      lambda=sum(pi.true[k,]*lambda.true[,b])
-      y[k,b]=rpois(1,lambda)
-    }
-  }
-  
-  
-  #run different methods
-  
-  res.nosmooth=cluster.mix(y,smooth=FALSE,K=4,tol=1e-4,maxit=500)
-  res.smooth=cluster.mix(y,smooth=TRUE,K=4,tol=1e-4,maxit=500)
-  
-  mse.pi.smooth[i]=mse(pi.true,res.smooth$pi)
-  mse.phi.smooth[i]=mse(phi.true,res.smooth$phi)
-  mse.pi.nosmooth[i]=mse(pi.true,res.nosmooth$pi)
-  mse.phi.nosmooth[i]=mse(phi.true,res.nosmooth$phi)
-  
-  
-  print(i)
+  mse.pi.smooth.all[i]=mse(pi.true,res.smooth$pi[,ordering.smooth])
+  mse.phi.smooth.all[i]=mse(phi.true,res.smooth$phi[ordering.smooth,])
+  mse.pi.nosmooth.all[i]=mse(pi.true,res.nosmooth$pi[,ordering.nosmooth])
+  mse.phi.nosmooth.all[i]=mse(phi.true,res.nosmooth$phi[ordering.nosmooth,])
 }
 
-save.image("simple_simulation_mse.RData")
+summary(mse.pi.smooth.all)
+summary(mse.pi.nosmooth.all)
+summary(mse.phi.smooth.all)
+summary(mse.phi.nosmooth.all)
+
+sd(mse.pi.smooth.all)
+sd(mse.pi.nosmooth.all)
+sd(mse.phi.smooth.all)
+sd(mse.phi.nosmooth.all)
+
+pdf('clustering_simulation_example.pdf',height=10,width=8)
+par(mfrow=c(4,1),mar=c(5,4,1,2),oma=c(2,2,0.4,0.4))
+plot(res.nosmooth$phi[ordering.nosmooth[1],],xlab='location',ylab='normalized intensity',type='l',col=3)
+lines(phi.true[1,],col=1,lwd=2)
+lines(res.smooth$phi[ordering.smooth[1],],col=2,lwd=2)
+legend("topright",legend=c("True profile", "Cluster-seq", "Basic GoM model"), lty=1, col=1:3)
+plot(res.nosmooth$phi[ordering.nosmooth[2],],xlab='location',ylab='normalized intensity',type='l',col=3)
+lines(phi.true[2,],col=1,lwd=2)
+lines(res.smooth$phi[ordering.smooth[2],],col=2,lwd=2)
+legend("topright",legend=c("True profile", "Cluster-seq", "Basic GoM model"), lty=1, col=1:3)
+plot(res.nosmooth$phi[ordering.nosmooth[3],],xlab='location',ylab='normalized intensity',type='l',col=3)
+lines(phi.true[3,],col=1,lwd=2)
+lines(res.smooth$phi[ordering.smooth[3],],col=2,lwd=2)
+legend("topright",legend=c("True profile", "Cluster-seq", "Basic GoM model"), lty=1, col=1:3)
+plot(res.nosmooth$phi[ordering.nosmooth[4],],xlab='location',ylab='normalized intensity',type='l',col=3)
+lines(phi.true[4,],col=1,lwd=2)
+lines(res.smooth$phi[ordering.smooth[4],],col=2,lwd=2)
+dev.off()
