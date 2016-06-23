@@ -61,6 +61,7 @@ for(K in 2:5){
       tissue_name_full = c(tissue_name_full, temp)
     }
     
+    
     par(mfrow = c(2, 1))
     plot(res$phi[1, ], type = 'l', col = 2, main = paste0("cluster center for ", region))
     for(k in 2:K){
@@ -72,6 +73,4 @@ for(K in 2:5){
 }
 ```
 
-
-```
 
