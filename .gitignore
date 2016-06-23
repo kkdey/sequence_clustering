@@ -1,4 +1,6 @@
 data/
+results/simulations/logs
+results/simulations/simple_simulation_mse*
 results/analysis_gtex/logs
 results/analysis_gtex/res_multiseq
 results/debug.RData
