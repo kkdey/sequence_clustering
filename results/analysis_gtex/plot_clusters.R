@@ -36,7 +36,7 @@ for(K in 2:5){
 #     
 
     res_phi_smooth = t(apply(res$phi, 1, ma, order = 10))
-    y_max = max(res_phi_smooth)
+    y_max = max(res_phi_smooth, na.rm = TRUE)
 
     pdf(paste0("cluster_res_all_", K, "_clusters_", gene_region[g], ".pdf"), height = 8, width = 12)
     par(mfrow = c(2, 1), mar = c(4, 4, 3, 1), oma = c(2, 2, 0.5, 0.5))
