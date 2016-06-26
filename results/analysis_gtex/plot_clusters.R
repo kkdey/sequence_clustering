@@ -34,11 +34,15 @@ for(K in 2:5){
 #     phi_reflect = cbind(res$phi, res$phi[, B:(B - (2^(J + 1) - B - 1))])
 #     phi_reflect = cbind(phi_reflect, phi_reflect[, (2^(J+1):1)])
 #     
+
+    res_phi_smooth = t(apply(res$phi, 1, ma, order = 10))
+    y_max = max(res_phi_smooth)
+
     pdf(paste0("cluster_res_all_", K, "_clusters_", gene_region[g], ".pdf"), height = 8, width = 12)
     par(mfrow = c(2, 1), mar = c(4, 4, 3, 1), oma = c(2, 2, 0.5, 0.5))
-    plot(ma(res$phi[1,], 10), type = 'l', col = 2, cex.lab = 1.2, xlab = "location (relative to TSS)", ylab = 'normalized intensity')
+    plot(res_phi_smooth[1, ], ylim = c(0, y_max), type = 'l', col = 2, cex.lab = 1.2, xlab = "location (relative to TSS)", ylab = 'normalized intensity')
     for(k in 2:K){
-      lines(ma(res$phi[k,], 10), col = k + 1)
+      lines(res_phi_smooth[k, ], col = k + 1)
     }
     barplot(t(res$pi), col = 2:(K + 1), axisnames = F, space = 0, border = NA, las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
     axis(1, at = sep_lines_mid, labels = tissue_name, cex = 2, padj = -1, tick = FALSE)
