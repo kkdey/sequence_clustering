@@ -38,7 +38,7 @@ for(K in 2:5){
     par(mfrow = c(2, 1), mar = c(4, 4, 3, 1), oma = c(2, 2, 0.5, 0.5))
     plot(ma(res$phi[1,], 10), type = 'l', col = 2, cex.lab = 1.2, xlab = "location (relative to TSS)", ylab = 'normalized intensity')
     for(k in 2:K){
-      lines(ma(res$phi[2,], 10), col = k + 1)
+      lines(ma(res$phi[k,], 10), col = k + 1)
     }
     barplot(t(res$pi), col = 2:(K + 1), axisnames = F, space = 0, border = NA, las = 1, ylim = c(0, 1), cex.axis = 1.5, cex.main = 1.4)
     axis(1, at = sep_lines_mid, labels = tissue_name, cex = 2, padj = -1, tick = FALSE)
