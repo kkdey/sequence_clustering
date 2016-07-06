@@ -33,7 +33,7 @@ for(i in 1:8){
 #   reads[[i]][[2]] = matrix(0, nr = sample_size, nc = region_split$end - region_split$start + 1)
   temp = NULL
   temp_info = NULL
-  temp_fun = NULL
+  temp_run = NULL
   j = 1
   k = 1
   if(sample_size != 0){
