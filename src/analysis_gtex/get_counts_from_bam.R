@@ -25,6 +25,7 @@ samples_subset = aggregate(Run_s ~ body_site_s, data = runinfo_subset, FUN = sam
 
 reads = list()
 info = list()
+run = list()
 
 for(i in 1:8){
   reads[[i]] = list()
@@ -32,6 +33,7 @@ for(i in 1:8){
 #   reads[[i]][[2]] = matrix(0, nr = sample_size, nc = region_split$end - region_split$start + 1)
   temp = NULL
   temp_info = NULL
+  temp_fun = NULL
   j = 1
   k = 1
   if(sample_size != 0){
@@ -44,6 +46,7 @@ for(i in 1:8){
   #       reads[[i]][[2]][j, ] = counts
         temp = rbind(temp, counts)    
         temp_info = c(temp_info, runinfo_subset[runinfo_subset$Run_s==samples_subset[i, ][[2]][[1]][k],]$gap_subject_id_s)
+        temp_run = c(temp_run, samples_subset[i, ][[2]][[1]][k])
         if(sum(counts) == 0){
           k = k + 1
           next
@@ -78,6 +81,7 @@ for(i in 1:8){
   }
   reads[[i]][[2]] = temp
   info[[i]] = temp_info
+  run[[i]] = temp_run
 }
 
 reads[[9]] = region
@@ -88,4 +92,4 @@ if(sample_size != 0){
   save_name = paste("reads_all", region_split$chr, region_split$start, region_split$end, sep = "_")
 }
 save_name = paste0(save_name, ".Robj")
-save(reads, info, file = file.path("data/gtex", save_name))
+save(reads, info, run, file = file.path("data/gtex", save_name))
