@@ -72,6 +72,7 @@ for(i in 1:8){
         }
         temp = rbind(temp, counts)    
         temp_info = c(temp_info, runinfo_subset[runinfo_subset$Run_s==samples_subset[i, ][[2]][[1]][k],]$gap_subject_id_s)
+        temp_run = c(temp_run, samples_subset[i, ][[2]][[1]][k])
         k = k + 1
       }else{
         k = k + 1

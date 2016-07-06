@@ -49,9 +49,17 @@ for(j in 1:(length(reads) - 1)){
     tissue_name_full = c(tissue_name_full, temp)
   }
   
+total_dim = 0
+for(j in 1:(length(reads) - 1)){
+  temp_dim = dim(reads[[j]][[2]])[1]
+  total_dim = c(total_dim, total_dim[j] + temp_dim) 
+}
 
-
-
+res_pi_ordered = list()
+for(j in 1:(length(reads) - 1)){
+  temp = res$pi[(total_dim[j]+1):total_dim[j+1], ]
+  res_pi_ordered[[j]] = temp[order_reads[[j]], ]
+}
 
   #     B = dim(res$phi)[2]
   #     J = floor(log2(B))
