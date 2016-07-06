@@ -89,7 +89,7 @@ for(g in 1:length(gi)){
   mtext("membership proportion", 2, line = 4, cex = 1.2)
   abline(v = sep_lines, lwd = 2)
   
-  plot(res_pi_ordered[, 2], xaxt = 'n', xlab = "", type = 'l', col = 3)
+  plot(res_pi_ordered[, 2], xaxt = 'n', xlab = "", ylab = c(0, 1), type = 'l', col = 3)
   lines(res_pi_ordered[, 3], col = 4)
   lines(res_pi_ordered[, 1], col = 2)
   
