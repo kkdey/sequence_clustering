@@ -102,9 +102,10 @@ for(j in 1:(length(reads) - 1)){
   mtext("membership proportion", 2, line = 4, cex = 1.2)
   abline(v = sep_lines, lwd = 2)
 
-  plot(res_pi_ordered[, 2], xaxt = 'n', xlab = "", type = 'l', col = 3)
+  plot(res_pi_ordered[, 2], ylim = c(0, 1), xaxt = 'n', xlab = "", ylab = "membership proportion", cex.lab = 1.5, cex.axis = 1.5, type = 'l', col = 3)
 lines(res_pi_ordered[, 3], col = 4)
 lines(res_pi_ordered[, 1], col = 2)
+# lines(res_pi_ordered[, 4], col = 5)
 
 axis(1, at = sep_lines_mid, labels = tissue_name, cex = 2, padj = -1, tick = FALSE)
 mtext("tissue", 1, line = 2, cex = 1.2)

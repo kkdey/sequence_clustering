@@ -1,0 +1,110 @@
+---
+title: "association_analysis"
+output: html_document
+---
+
+```{r}
+library(qvalue)
+
+gene_region = read.table("../../supplemental/gtex/gene_region.txt", stringsAsFactors = FALSE)
+gene_region = unlist(gene_region, use.names = FALSE)
+gene_region = gsub("\\:", "_", gene_region)
+gene_region = gsub("\\-", "_", gene_region)
+
+
+K = c(3, 4, 3)
+
+gi = c(17, 2, 4)
+
+g = 3
+
+ftn = function(x) as.numeric(levels(x))[x]
+
+load_name = paste("cluster_res_all", K[g], "clusters", gene_region[gi[g]], sep = "_")
+load_name = paste0(load_name, ".RData")
+load(load_name)
+
+table_raw = read.delim("../../supplemental/gtex/SraRunTable.txt")
+table = table_raw
+table = table[table$Assay_Type_s == "RNA-Seq", ]
+
+id_list = data.frame(id1 = table$gap_subject_id_s, id2 = table$submitted_subject_id_s)
+rm(table)
+
+path = "../../data/gtex"
+
+snp_matrix = list()
+for(j in 1:(length(reads) - 1)){
+  load(file.path(path, paste0(paste("genotype", gene_region[gi[g]], tissue_name[j], sep = "_"), ".Robj")))
+  snp_matrix[[j]] = matrix(0, nr = dim(geno)[1], nc = 1)
+  colnames(snp_matrix[[j]]) = "NULL"
+  for(k in 1:length(info[[j]])){
+    id2_temp = as.character(unique(id_list[id_list$id1 == info[[j]][k], 2]))
+    if(sum(colnames(geno) %in% id2_temp) == 0) next
+    temp = geno[, colnames(geno) %in% id2_temp]
+    if(!is.null(dim(temp))){
+      temp = apply(temp, 2, ftn)
+    }else{
+      temp = ftn(temp)
+    }
+    snp_matrix[[j]] = cbind(snp_matrix[[j]], temp)
+    colnames(snp_matrix[[j]])[dim(snp_matrix[[j]])[2]] = info[[j]][k]
+  }
+  snp_matrix[[j]] = snp_matrix[[j]][, -1]
+  rownames(snp_matrix[[j]]) = rownames(geno)
+  
+  snp_matrix[[j]] = as.data.frame(snp_matrix[[j]])
+  snp_matrix[[j]] = cbind(id = rownames(snp_matrix[[j]]), snp_matrix[[j]])
+}
+
+total_dim = 0
+for(j in 1:(length(reads) - 1)){
+  temp_dim = dim(reads[[j]][[2]])[1]
+  total_dim = c(total_dim, total_dim[j] + temp_dim) 
+}
+
+res_pi_subset = list()
+for(j in 1:(length(reads) - 1)){
+  res_pi_subset[[j]] = res$pi[(total_dim[j]+1):total_dim[j+1], ]
+  res_pi_subset[[j]] = res_pi_subset[[j]][as.character(info[[j]]) %in% colnames(snp_matrix[[j]]),]
+}
+
+res_pi_subset_all = res_pi_subset[[1]]
+snp_matrix_all = snp_matrix[[1]]
+for(j in 2:(length(reads) - 1)){
+  res_pi_subset_all = rbind(res_pi_subset_all, res_pi_subset[[j]]) 
+  snp_matrix_all = merge(snp_matrix_all, snp_matrix[[j]], by = "id", all = TRUE, suffix = c("", ""))
+}
+
+corr.matrix = matrix(0, nr = dim(snp_matrix_all)[1], nc = K)
+for(k in 1:K){
+  for(m in 1:dim(snp_matrix_all)[1]){
+    corr.matrix[m, k] = cor(res_pi_subset_all[, k][!is.na(snp_matrix_all[m, -1])], as.numeric(snp_matrix_all[m, -1])[!is.na(snp_matrix_all[m, -1])])
+  }
+}
+
+p.val = matrix(0, nr = dim(snp_matrix_all)[1], nc = K)
+for(k in 1:K){
+  for(m in 1:dim(snp_matrix_all)[1]){
+    fit = lm(res_pi_subset_all[, k] ~ as.numeric(snp_matrix_all[m, -1]))
+    p.val[m, k] = summary(fit)$coef[2, 4]
+  }
+}
+
+```
+
+
+
+```{r, fig.width = 10, fig.height = 8}
+
+par(mfrow = c(2, 1), mar = c(4, 4, 2, 1), oma = c(2, 2, 0.5, 0.5))
+plot(corr.matrix[, 3])
+abline(v = which(abs(corr.matrix[, 3]) == max(abs(corr.matrix[, 3]))), lty = 2, col = 4)
+
+qval = qvalue(p.val[, 3])
+plot(qval$qvalue)
+abline(v = which(qval$qvalue == min(qval$qvalue)), lty = 2, col = 4)
+
+```
+
+
