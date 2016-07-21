@@ -92,3 +92,39 @@ qval = qvalue(p.val[, 3])
 plot(qval$qvalue)
 abline(v = which(qval$qvalue == min(qval$qvalue)), lty = 2, col = 4)
 
+
+corr.matrix.subset = list()
+for(j in 1:(length(reads) - 1)){
+  corr.matrix.subset[[j]] = matrix(0, nr = dim(snp_matrix_all)[1], nc = K)
+  for(k in 1:K){
+    for(m in 1:dim(snp_matrix_all)[1]){
+      corr.matrix.subset[[j]][m, k] = cor(res_pi_subset[[j]][, k][!is.na(snp_matrix[[j]][m, -1])], as.numeric(snp_matrix[[j]][m, -1])[!is.na(snp_matrix[[j]][m, -1])])
+    }
+  }
+}
+
+p.val.subset = list()
+for(j in 1:(length(reads) - 1)){
+  p.val.subset[[j]] = matrix(0, nr = dim(snp_matrix_all)[1], nc = K)
+  for(k in 1:K){
+    for(m in 1:dim(snp_matrix_all)[1]){
+      res = try(fit <- lm(res_pi_subset[[j]][, k] ~ as.numeric(snp_matrix[[j]][m, -1])), silent = TRUE)
+      if(class(res) == "try-error"){
+        p.val.subset[[j]][m, k] = NA
+      }else{
+        p.val.subset[[j]][m, k] = summary(fit)$coef[2, 4]
+      }
+    }
+  }
+}
+
+
+for(j in 1:(length(reads) - 1)){
+  par(mfrow = c(2, 1), mar = c(4, 4, 2, 1), oma = c(2, 2, 0.5, 0.5))
+  plot(corr.matrix.subset[[j]][, 3])
+  abline(v = which(abs(corr.matrix.subset[[j]][, 3]) == max(abs(corr.matrix.subset[[j]][, 3]))), lty = 2, col = 4)
+  
+  qval = qvalue(p.val.subset[[j]][!is.na(p.val.subset[[j]][, 3]), 3])
+  plot(qval$qvalue)
+  abline(v = which(qval$qvalue == min(qval$qvalue)), lty = 2, col = 4)
+}
