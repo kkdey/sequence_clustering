@@ -1,0 +1,7 @@
+#!/bin/bash
+cmd=cat
+for x in `$cmd sample_list.txt`; do
+	for y in `$cmd gene_region.txt`; do 
+		echo -e "sam-dump --header --aligned-region $y $x | samtools view -Sb -o "$x"_"`echo $y | sed 's/:/_/g;s/-/_/g'`".bam -" | tr -d $'\r' 
+	done
+done
